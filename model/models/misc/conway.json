@@ -1,0 +1,72 @@
+{
+    "states": [
+        {
+            "id": 0,
+            "icon": "",
+            "name": "blank",
+            "actions": [
+                {
+                    "sign": "=",
+                    "num": 3,
+                    "stateID": "1",
+                    "actions": [
+                        {
+                            "stateID": "1",
+                            "type": "go_to_state"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "icon": "💩",
+            "name": "life",
+            "actions": [
+                {
+                    "sign": "<",
+                    "num": 2,
+                    "stateID": "1",
+                    "actions": [
+                        {
+                            "stateID": 0,
+                            "type": "go_to_state"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                },
+                {
+                    "sign": ">",
+                    "num": 3,
+                    "stateID": "1",
+                    "actions": [
+                        {
+                            "stateID": 0,
+                            "type": "go_to_state"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        }
+    ],
+    "world": {
+        "update": "simultaneous",
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 50
+            },
+            {
+                "stateID": 1,
+                "parts": 50
+            }
+        ],
+        "size": {
+            "width": 25,
+            "height": 25
+        }
+    }
+}

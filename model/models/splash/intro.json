@@ -1,0 +1,93 @@
+{
+    "meta": {
+        "description": "none",
+        "draw": 2,
+        "fps": 15,
+        "play": true
+    },
+    "states": [
+        {
+            "id": 0,
+            "icon": "",
+            "name": "blank",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0.005,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 1,
+                            "actions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "icon": "🌲",
+            "name": "tree",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 2,
+                            "actions": []
+                        }
+                    ]
+                },
+                {
+                    "type": "if_neighbor",
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": 2,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 2,
+                            "actions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "icon": "🔥",
+            "name": "fire",
+            "actions": [
+                {
+                    "type": "go_to_state",
+                    "stateID": 0,
+                    "actions": []
+                }
+            ]
+        }
+    ],
+    "world": {
+        "update": "simultaneous",
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 70
+            },
+            {
+                "stateID": 1,
+                "parts": 30
+            },
+            {
+                "stateID": 2,
+                "parts": 0
+            }
+        ],
+        "size": {
+            "width": 65,
+            "height": 25
+        }
+    }
+}

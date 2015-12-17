@@ -1,0 +1,144 @@
+{
+    "meta": {
+        "description": "Forest Fire Model... now with sprayin' lotsa WATER"
+    },
+    "states": [
+        {
+            "actions": [
+                {
+                    "actions": [
+                        {
+                            "stateID": 1,
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "probability": 0.01,
+                    "type": "if_random"
+                }
+            ],
+            "description": "Blank spots grow trees. (adjust the growth rate below)",
+            "icon": "",
+            "id": 0,
+            "name": "blank"
+        },
+        {
+            "actions": [
+                {
+                    "actions": [
+                        {
+                            "stateID": "3",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "probability": 0.0001,
+                    "type": "if_random"
+                },
+                {
+                    "actions": [
+                        {
+                            "actions": [
+                                {
+                                    "stateID": "4",
+                                    "type": "go_to_state",
+                                    "actions": []
+                                }
+                            ],
+                            "probability": 0.5,
+                            "type": "if_random"
+                        },
+                        {
+                            "stateID": "2",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "num": 1,
+                    "sign": ">=",
+                    "stateID": 2,
+                    "type": "if_neighbor"
+                }
+            ],
+            "description": "Trees can get hit by lightning. If any of their neighbors are on fire, firefighters will try to spray them with water! If they fail, the tree catches on fire.",
+            "icon": "🌲",
+            "id": 1,
+            "name": "tree"
+        },
+        {
+            "actions": [
+                {
+                    "stateID": "2",
+                    "type": "go_to_state",
+                    "actions": []
+                }
+            ],
+            "description": "Sets the spot on fire, what a jerk.",
+            "icon": "⚡️",
+            "id": 3,
+            "name": "lightning"
+        },
+        {
+            "actions": [
+                {
+                    "stateID": 0,
+                    "type": "go_to_state",
+                    "actions": []
+                }
+            ],
+            "description": "This fire just burns it all away.",
+            "icon": "🔥",
+            "id": 2,
+            "name": "fire"
+        },
+        {
+            "actions": [
+                {
+                    "actions": [
+                        {
+                            "stateID": "1",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "probability": 0.1,
+                    "type": "if_random"
+                }
+            ],
+            "description": "Sprays a tree. After a while, it \"turns back\" into a tree.",
+            "icon": "💦",
+            "id": 4,
+            "name": "water"
+        }
+    ],
+    "world": {
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 100
+            },
+            {
+                "stateID": 1,
+                "parts": 0
+            },
+            {
+                "stateID": 3,
+                "parts": 0
+            },
+            {
+                "stateID": 2,
+                "parts": 0
+            },
+            {
+                "stateID": 4,
+                "parts": 0
+            }
+        ],
+        "size": {
+            "height": 20,
+            "width": 25
+        },
+        "update": "simultaneous"
+    }
+}

@@ -1,0 +1,96 @@
+{
+    "meta": {
+        "description": "The growth rate starts at 0.2%. What happens when you increase it to 0.5%? 1%? 5%?\n\n(Also, you can now pause the sim, and click-and-drag on the grid to \"draw\" objects onto it)",
+        "draw": 2,
+        "fps": 30,
+        "play": true
+    },
+    "states": [
+        {
+            "id": 0,
+            "icon": "",
+            "name": "blank",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0.002,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 1,
+                            "actions": []
+                        }
+                    ]
+                }
+            ],
+            "description": "Grows trees."
+        },
+        {
+            "id": 1,
+            "icon": "🌲",
+            "name": "tree",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0.0001,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 2,
+                            "actions": []
+                        }
+                    ]
+                },
+                {
+                    "type": "if_neighbor",
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": 2,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 2,
+                            "actions": []
+                        }
+                    ]
+                }
+            ],
+            "description": "Catches on fire if hit by lightning, or if a neighbor's on fire."
+        },
+        {
+            "id": 2,
+            "icon": "🔥",
+            "name": "fire",
+            "actions": [
+                {
+                    "stateID": 0,
+                    "type": "go_to_state",
+                    "actions": []
+                }
+            ],
+            "description": "Burns away."
+        }
+    ],
+    "world": {
+        "update": "simultaneous",
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 100
+            },
+            {
+                "stateID": 1,
+                "parts": 0
+            },
+            {
+                "stateID": 2,
+                "parts": 0
+            }
+        ],
+        "size": {
+            "width": 40,
+            "height": 34
+        }
+    }
+}

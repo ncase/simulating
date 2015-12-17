@@ -1,0 +1,16 @@
+.bigfoot-footnote__button{
+	height: 1.5em;
+    font-weight: 100;
+    color: #666;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+}
+.bigfoot-footnote__button.is-active{
+	color:#fff;
+}
+.footnotes{
+	display: none;
+}

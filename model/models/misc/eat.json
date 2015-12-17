@@ -1,0 +1,112 @@
+{
+    "states": [
+        {
+            "actions": [
+                {
+                    "actions": [
+                        {
+                            "actions": [
+                                {
+                                    "stateID": "1",
+                                    "type": "go_to_state",
+                                    "actions": []
+                                }
+                            ],
+                            "probability": 0.05,
+                            "type": "if_random"
+                        }
+                    ],
+                    "num": 1,
+                    "sign": ">=",
+                    "stateID": "1",
+                    "type": "if_neighbor"
+                },
+                {
+                    "actions": [
+                        {
+                            "actions": [
+                                {
+                                    "stateID": "2",
+                                    "type": "go_to_state",
+                                    "actions": []
+                                }
+                            ],
+                            "probability": 0.04,
+                            "type": "if_random"
+                        }
+                    ],
+                    "num": 1,
+                    "sign": ">=",
+                    "stateID": "2",
+                    "type": "if_neighbor"
+                }
+            ],
+            "icon": "",
+            "id": 0,
+            "name": "blank"
+        },
+        {
+            "icon": "🌱",
+            "id": 1,
+            "name": "grass",
+            "actions": []
+        },
+        {
+            "actions": [
+                {
+                    "actions": [
+                        {
+                            "stateID": 0,
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "num": 0,
+                    "sign": "=",
+                    "stateID": "1",
+                    "type": "if_neighbor"
+                },
+                {
+                    "actions": [
+                        {
+                            "leaveStateID": 0,
+                            "space": 0,
+                            "spotStateID": "1",
+                            "type": "move_to",
+                            "actions": []
+                        }
+                    ],
+                    "num": 1,
+                    "sign": ">=",
+                    "stateID": "1",
+                    "type": "if_neighbor"
+                }
+            ],
+            "icon": "🐰",
+            "id": 2,
+            "name": "wabbit"
+        }
+    ],
+    "world": {
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 0
+            },
+            {
+                "stateID": 1,
+                "parts": 99
+            },
+            {
+                "stateID": 2,
+                "parts": 1
+            }
+        ],
+        "size": {
+            "height": 50,
+            "width": 50
+        },
+        "update": "simultaneous"
+    }
+}

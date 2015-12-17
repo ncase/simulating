@@ -1,0 +1,79 @@
+{
+    "meta": {
+        "description": "The growth rate starts at 0.2%. What happens when you increase it to 0.5%? 1%? 5%?\n\n(Also, you can now pause the sim, and click-and-drag on the grid to \"draw\" objects onto it)",
+        "draw": 0,
+        "fps": 30,
+        "play": true
+    },
+    "states": [
+        {
+            "id": 0,
+            "icon": "",
+            "name": "blank",
+            "actions": []
+        },
+        {
+            "id": 1,
+            "icon": "▲",
+            "name": "triangle",
+            "actions": [
+                {
+                    "sign": "<",
+                    "num": 3,
+                    "stateID": "1",
+                    "actions": [
+                        {
+                            "space": 0,
+                            "spotStateID": 0,
+                            "leaveStateID": 0,
+                            "type": "move_to"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "icon": "▦",
+            "name": "square",
+            "actions": [
+                {
+                    "sign": "<",
+                    "num": 3,
+                    "stateID": "2",
+                    "actions": [
+                        {
+                            "space": 0,
+                            "spotStateID": 0,
+                            "leaveStateID": 0,
+                            "type": "move_to"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        }
+    ],
+    "world": {
+        "size": {
+            "width": 25,
+            "height": 25
+        },
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 50
+            },
+            {
+                "stateID": 1,
+                "parts": 25
+            },
+            {
+                "stateID": 2,
+                "parts": 25
+            }
+        ],
+        "neighborhood": "moore"
+    }
+}

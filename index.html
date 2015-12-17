@@ -1,0 +1,566 @@
+<!doctype>
+<html>
+<head>
+	
+	<!-- Meta -->
+	<!--title>See the Forest for the Trees</title-->
+	<title>Simulating The World (In Emoji)</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="styles/index.css">
+	<link rel="stylesheet" type="text/css" href="styles/bigfoot-default.css">
+	<link rel="stylesheet" type="text/css" href="styles/bigfoot-mod.css">
+
+</head>
+<body>
+
+<!-- SPLASH SCREEN -->
+<div class="splash" style="background: hsla(72, 87%, 11%, 1);">
+	
+	<iframe src="model?local=splash/intro&bg=0&play=0&edit=0"></iframe>
+	<div style="width:100%; height:100%; box-shadow: inset 0 0 200px rgba(0,0,0,1);"></div>
+
+	<div style="font-size: 180px;top: 95px;">
+		SIMULATING
+	</div>
+	<div style="font-size: 88px;top: 265px;">
+		THE WORLD
+		(IN EMOJI😘)
+	</div>
+
+	<div id="splash_hand_container">
+		<div id="splash_hand"></div>
+	</div>
+
+</div>
+
+<!-- MAIN ESSAY -->
+<div class="words">
+
+<p>
+Normally, authors start with a topic <i>they</i> care about.
+But today, it’s about <i>you</i>.
+Tell me, what Big Problem in your city/country/planet
+do <i>you</i> care about?
+</p>
+
+<input type="text"
+	style="font-size:25px; margin:5px 0 10px 0;"
+	name="your_issue" class="reader_input"
+	placeholder="(yes, actually type it in here!)"></input>
+
+<p>
+Of course, there’s lots of Big Problems out there:
+terrorism and trafficking,
+the environment and the economy,
+injustice and inequality,
+this and that, on and on.
+These are <b>complex systems</b> with complex problems,
+and faced with all that,
+despair is understandable.
+Despair is normal.
+But despair is not <i>useful</i>.
+</p>
+
+<p>
+We can &mdash; and must &mdash; understand the <i>systems</i> of our world.
+I think one good way to understand a system is to <i>see</i> it,
+with simulations.
+As it turns out,
+a growing movement of scientists, engineers, and policymakers
+are <i>already</i> using simulations to explore and explain
+complex systems...
+</p>
+
+<p>...such as
+<span name="your_issue" class="reader_output"
+	placeholder="[no really, type in your Big Problem]"></span>.
+</p>
+
+<p>
+Remember, this article is for <i>you</i>.
+I want to share what I’m still learning about complex systems,
+and help you <i>apply</i> these ideas to
+the Big Problem <i>you</i> care about.
+You'll learn how to see things in systems,
+find ways to tackle them,
+and at the end of this,
+you'll <i>create your very own simulation.</i>
+</p>
+
+<p>
+To start, let’s simulate some happy little trees. 🌲🌲🌲
+</p>
+
+<!--p>
+There is one thing that still gives me hope.
+I recently learnt that a bunch of scientists
+from different fields got together,
+and found patterns in <i>all</i> the systems they study.
+And now, they’re creating new ways
+&mdash;
+arguably, a whole new kind of <i>science</i>
+&mdash;
+to understand complex systems,
+and just maybe, change them too!
+</p-->
+
+</div>
+
+<div class="example">
+	<div id="title">
+		<b>A Tiny Forest</b> For Tiny Trees
+	</div>
+	<iframe src="model?local=forest/0_growth&play=0&edit=1"></iframe>
+</div>
+
+<div class="words">
+
+<p>
+I used to live in California for a couple years.
+Back then, it was (and still is)
+going through a rather nasty drought,
+causing a season of disastrous forest fires.
+That was our Big Problem.
+
+<!--sup id="fnref:1" label="click me">
+    <a href="#fn:1" rel="footnote">1</a>
+</sup-->
+
+</p>
+
+<p>
+Forests are complex systems,
+but we can still build up a basic simulation of them.
+Step by step, you’ll see
+how simple rules can lead to complex results,
+<!--from the bottom up.-->
+
+<!--sup id="fnref:2" label="emergence">
+    <a href="#fn:2" rel="footnote">2</a>
+</sup-->
+
+<!--You'll also discover some counterintuitive stuff about forests,
+and what they have in common with <i>all complex systems</i>,
+yes, including -->
+
+and learn what forests
+have in common with <i>all complex systems</i>.
+Yes, including 
+<span name="your_issue" class="reader_output"
+	placeholder="[type in your Big Problem, pleeeeease?]"></span>!
+</p>
+
+<p>
+Let’s add another rule to our fake forest:
+sometimes, trees will get hit by lightning &amp; catch on fire.
+(🌲→🔥)
+What do you think happens <i>now</i>, when you increase tree growth?
+Make a guess below!
+(Don’t worry, this question isn’t to <i>judge</i> or <i>grade</i> you,
+it’s solely for you to express your prediction.)
+</p>
+
+<p>
+<form name="predict_fire" class="reader_choice">
+<label>
+	<input type="radio" name="prediction" value="more" checked>
+	🌲📈&rarr;🌲📈: More trees lead to more trees, duh.
+</label>
+<label>
+	<input type="radio" name="prediction" value="less">
+	🌲📈&rarr;🌲📉: More trees lead to fewer trees.
+</label>
+<label>
+	<input type="radio" name="prediction" value="none">
+	Neither.
+</label>
+<label>
+	<input type="radio" name="prediction" value="both">
+	Both... somehow.
+</label>
+</form>
+</p>
+
+<p>
+Now, let’s find out what happens…
+</p>
+
+</div>
+
+<div class="example">
+	<div id="title">
+		<b>A Forest</b> Where Trees Get Born &amp; Get Burn...ed
+	</div>
+	<iframe src="model?local=forest/1_fire&play=1&edit=1"></iframe>
+</div>
+
+<div class="words">
+
+<!--
+
+Here's the format:
+1. reflect on prediction
+2. new idea
+3. apply idea // prediction or freeform text.
+
+-->
+
+<p name="predict_fire" class="reader_reflect">
+
+<span value="more">
+You predicted that more trees would lead to more trees,
+and that's a totally reasonable prediction!
+However, in this case, intuition fails.
+More is not more.
+Here, more is <i>less</i>.
+This counterintuitive result is because
+more trees &rarr;
+thicker forest &rarr;
+fire can spread further &rarr;
+fewer trees.
+(And afterwards,
+fewer trees &rarr;
+fire can't spread as far &rarr;
+trees can grow back &rarr;
+the cycle repeats)
+</span>
+
+<span value="less">
+You said that more trees would lead to <i>fewer</i> trees.
+Clever! However, your prediction only came half-true.
+I assume you figured out that
+more trees &rarr;
+thicker forest &rarr;
+fire can spread further &rarr;
+fewer trees.
+But this logic goes further:
+fewer trees &rarr;
+fire can't spread as far &rarr;
+trees can grow back &rarr;
+the cycle repeats,
+and the higher the growth rate,
+the more extreme the cycle is.
+</span>
+
+<span value="none">
+You predicted that more trees would lead to...
+neither more trees nor fewer trees.
+Heh, you must've thought I was giving you a trick question.
+Well, I mean, I was.
+Anyway, it turns out increasing the growth rate
+would create a cycle of more <i>and</i> less trees.
+More trees &rarr;
+thicker forest &rarr;
+fire spreads further &rarr;
+fewer trees &rarr;
+fire spreads less &rarr;
+more trees grow back &rarr;
+repeat cycle.
+</span>
+
+<span value="both">
+You predicted that more trees would lead to...
+both more <i>and</i> less trees?
+That makes no sense.
+And yet, you're totally right!
+Increasing the growth rate
+creates a cycle of more <i>and</i> less trees.
+More trees &rarr;
+thicker forest &rarr;
+fire spreads further &rarr;
+fewer trees &rarr;
+fire spreads less &rarr;
+more trees grow back &rarr;
+the cycle repeats,
+and the higher the growth rate,
+the more extreme the cycle is.
+</span>
+
+</p>
+
+<p>
+Simple rules to complex results, <i>from the bottom up.</i>
+</p>
+
+<p>
+🌲📈→🔥📈→🌲📉→🔥📉→🌲📈⟲
+</p>
+
+<p>
+We're so used to thinking in linear cause-and-effect, A-affects-B.
+But the world's filled with what scientists call <b>feedback loops</b>,
+where A-affects-B-affects-A-affects-B, to infinity.
+
+<!--most of the world is actually <i>nonlinear</i>,
+where A affects B affects A affects B, etc.
+This is called a <b>feedback loop</b>.
+Loops are a new way of looking at the world.
+Now, I’d like to break down your complex Big Problem,
+<span name="your_issue" class="reader_output"
+	placeholder="[pleeeeease]"></span>,
+into little loops.-->
+</p>
+
+<p>
+One kind of feedback loop is the <b>reinforcing loop</b>,
+when a thing leads to more of itself.
+(e.g. 🔥📈→🔥📈: fire makes more fire)
+Think of <span name="your_issue" class="reader_output"
+	placeholder="[pleeeeease]"></span> again.
+What reinforcing loops, good <i>and</i> bad, affect your Big Problem?
+</p>
+
+<textarea style="height:120px;"
+	name="reinforcing_loop" class="reader_input"
+	placeholder="Example #1: an arms race between two countries. Example #2: when someone joins a cause, that influences their friends to also join the cause, and so on."></textarea>
+
+<p>
+The other kind of loop is the <b>balancing loop</b>,
+when more leads to less,
+then less leads to more.
+(e.g. the above 🌲📈→🌲📉→🌲📈 cycle)
+Finding balancing loops is harder,
+but here's a trick:
+think of the reinforcing loops you wrote down just now.
+What things <i>prevent</i> them from growing forever?
+Those are your balancing loops!
+So, what are the balancing loops in your Big Problem?
+</p>
+
+<textarea style="height:120px;"
+	name="balancing_loop" class="reader_input"
+	placeholder="Example #1: a country in an arms race runs out of money. Example #2: members in a social movement run out of friends willing to join the cause."></textarea>
+
+<p>
+Now that you’ve broken down your Big Problem into loops,
+how do we <i>change</i> those loops?
+Well, since our forest is just a simulation,
+we can try out all kinds of wacky stuff to it,
+such as… what if Smokey The Bear finally flips his lid
+and starts killing trees?
+So, if you’ll <i>bear</i> with me for a moment…
+</p>
+
+</div>
+
+<div class="example">
+	<div id="title">
+		<b>A Forest</b> Where Only YOU Can Prevent Forest Fires
+	</div>
+	<iframe src="model?local=forest/2_bears&play=1&edit=1"></iframe>
+</div>
+
+<div class="words">
+
+<p>
+Yup. Killing trees actually <i>helps</i> the trees,
+by containing the fires.
+And yes, forest firefighters actually do this!
+That's where “fight fire with fire” comes from:
+the practice of doing controlled burns,
+to get rid of flammable material before a wildfire can spread through it.
+</p>
+
+<p>
+By making “walls” of removed trees,
+you stop that reinforcing loop of fire making more fire.
+<i>That</i> is how you change a system.
+Not by fiddling with individual parts,
+<i>but by changing the core loops</i>. 
+</p>
+
+<p>
+Let's make more bear-walls, but first:
+a forest isn't an ecosystem with just one plant species.
+So, let’s simulate these two plants:
+</p>
+
+<p style="text-align:left">
+🌳 <b>Strong Tree:</b>
+invincible to fire, but if four or more of its neighbors are Jerk Weeds,
+it'll be choked of nutrients and die.
+</p>
+
+<p style="text-align:left">
+🌱 <b>Jerk Weed:</b>
+flammable &amp; grows twice as fast as the Strong Trees.
+Also, sometimes they spontaneously catch on fire.
+</p>
+
+<p>
+I've balanced these plants so that without your intervention,
+they'll get a 50/50 split of the land.
+But <i>after</i> you add your walls of fire-containing bears,
+how do you think the plants will interact <i>then?</i>
+</p>
+
+<form name="predict_species_2" class="reader_choice">
+<label>
+	<input type="radio" name="prediction" value="tree" checked>
+	🌳&gt;🌱: Strong Trees will now beat out the Jerk Weeds.
+</label>
+<label>
+	<input type="radio" name="prediction" value="weed">
+	🌳&lt;🌱: Strong Trees will now be overrun by Jerk Weeds.
+</label>
+<label>
+	<input type="radio" name="prediction" value="same">
+	🌳=🌱: Both plants will still have a somewhat equal share.
+</label>
+<label>
+	<input type="radio" name="prediction" value="what">
+	Something completely different.
+</label>
+</form>
+
+<p>
+Now, let's see...
+</p>
+
+</div>
+
+<div class="example">
+	<div id="title">
+		<b>A Forest</b> Where Some Plants Are Jerks
+	</div>
+	<iframe src="model?local=forest/3_plants&play=2&edit=1"></iframe>
+</div>
+
+<div class="words">
+
+<p>
+Before we talk about your prediction,
+did you notice how the plants formed clusters,
+even though <i>no rule told them to?</i>
+This is called <b>self-organization</b>,
+a weird and wonderful thing about complex systems.
+The fact that order can arise from chaos is so unlike everyday life
+—
+imagine an omelette unscrambling itself
+—
+yet without it, there wouldn’t even <i>be</i> life!
+</p>
+
+<p>
+Self-organization doesn’t just come from the individual parts of a system,
+it comes from the <i>interactions</i> between them.
+Earlier, you broke your Big Problem into loops.
+Now, if you please,
+break those loops into the <i>individual interactions</i>:
+</p>
+
+<p>
+<textarea style="height:120px;"
+	name="interactions" class="reader_input"
+	placeholder="Disease: one person infects another. Economics: two people exchange stuff. Politics: one person's beliefs are influenced by their friends' beliefs."></textarea>
+</p>
+
+<p>
+Self-organization also allows the system to <i>adapt from the bottom up,</i>
+which brings us to your prediction:
+[WILL FINISH THIS PART LATER.
+BASICALLY, YEAH, FIRE SUPPRESSION ACTUALLY MAKES FORESTS
+MORE FLAMMABLE IN THE LONG RUN, WHICH IS A REAL DILEMMA
+FIREFIGHTERS FACE]
+<!--
+(BLAH BLAH BLAH)
+[fire suppression made the forest more flammable]
+This is an <i>actual</i> dilemma firefighters are still facing,
+more on this later.-->
+</p>
+
+<p>
+Simulations are helpful in <i>explaining</i> complex systems,
+but they’re also great for <i>exploring</i> complex systems!
+Scientists, businesses, and policymakers all already use
+simulations to try out different strategies,
+find risks, and weigh tradeoffs.
+In this final forest simulation,
+you are in charge of saving the forest, <i>and saving lives.</i>
+</p>
+
+</div>
+
+<div class="example">
+	<div id="title">
+		<b>A Forest</b> With Very Flammable Houses
+	</div>
+	<iframe src="model?local=forest/4_houses&play=2&edit=1"></iframe>
+</div>
+
+<div class="words">
+
+<p>
+HA HA THAT'S MY ENTIRE DRAFT SO FAR, I'M SUCH A TEASE.
+</p>
+
+<p>
+Anyway yeah let me know what your thoughts are so far!
+Is this playable post <i>actually</i>
+getting you to think about your Big Problem
+in a new way, through systems?
+Do the free-form questions actually help?
+Or are you just kinda skipping over those.
+What parts bore you, or seem irrelevant or too weird?
+How's the whole flow of the piece, is it too text-heavy?
+Was the introduction too long?
+Does framing it as "overcoming despair" work, or does it still feel detached?
+</p>
+
+<p>
+Honest feedback is best.
+And again, thank you so so much! 😘
+</p>
+
+</div>
+
+
+<!--
+
+NEXT UP:
+
+- create your own solutions!
+- a bunch of diverse examples, apply what you've learnt again. // also, some FUN examples.
+- A form to reflect on everything you've written // local interactions FIRST.
+- THE SANDBOX
+- Hype-kill. Some thoughts tying together everything, From The Bottom Up.
+- PD & Patreon: From the Bottom Up
+- Thanks & Further Reading, Press and Stuff.
+
+// Save If It Starts Paused...
+// If you could take snapshots
+// and have directional movement & detection
+// the simulations could be a LOT more powerful.
+
+-->
+
+
+<!-- FOOTNOTES -->
+<div class="footnotes"><ol>
+    <li class="footnote" id="fn:1">
+    	ha ha, i am a test footnote.
+    	<br>
+    	optional shenanigans.
+    </li>
+    <li class="footnote" id="fn:2">
+    	emergence.
+    	<br>
+    	mashup of system dynamics and complex systems theory.
+    	<br>
+    	...
+    	<br>
+    	do we really need feetnotes???
+    </li>
+</ol></div>
+
+</body>
+</html>
+
+<!-- SCRIPTS -->
+<script src="scripts/jquery-1.8.3.min.js"></script>
+<script src="scripts/bigfoot.js"></script>
+<script src="scripts/index.js"></script>

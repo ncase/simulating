@@ -1,0 +1,101 @@
+{
+    "meta": {
+        "description": "Word Of Mouth Simulator.\n\nWith and without knowledge-havers creating NEW knowledge. YES! LACK OF EQUILIBRIUUUUUUM"
+    },
+    "states": [
+        {
+            "actions": [
+                {
+                    "actions": [
+                        {
+                            "actions": [
+                                {
+                                    "stateID": "2",
+                                    "type": "go_to_state",
+                                    "actions": []
+                                }
+                            ],
+                            "probability": 0.2,
+                            "type": "if_random"
+                        }
+                    ],
+                    "num": 1,
+                    "sign": ">=",
+                    "stateID": "2",
+                    "type": "if_neighbor"
+                }
+            ],
+            "description": "If a neighbor is sharing an idea, there's a chance you'll also share that idea.",
+            "icon": "",
+            "id": 0,
+            "name": "blank"
+        },
+        
+        {
+            "actions": [
+                {
+                    "stateID": "1",
+                    "type": "go_to_state",
+                    "actions": []
+                }
+            ],
+            "description": "After you're done sharing, become an idea.",
+            "icon": "💬",
+            "id": 2,
+            "name": "sharing"
+        },
+
+        {
+            "actions": [
+                {
+                    "actions": [
+                        {
+                            "stateID": 0,
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "probability": 0.02,
+                    "type": "if_random"
+                },
+                {
+                    "actions": [
+                        {
+                            "stateID": "2",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "probability": 0.01,
+                    "type": "if_random"
+                }
+            ],
+            "description": "Sticks around for a while.",
+            "icon": "💡",
+            "id": 1,
+            "name": "idea"
+        }
+    ],
+    "world": {
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 100
+            },
+            {
+                "stateID": 1,
+                "parts": 0
+            },
+            {
+                "stateID": 2,
+                "parts": 0
+            }
+        ],
+        "size": {
+            "height": 15,
+            "width": 40
+        },
+        "update": "simultaneous"
+    }
+}

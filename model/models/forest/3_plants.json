@@ -1,0 +1,169 @@
+{
+    "meta": {
+        "description": "1. Just watch for a minute. How do the plants behave normally?\n\n2. Hit \"pause\", then hit \"new\".\n\n3. Draw a few bear-walls. Make around 10 small sections.\n\n4. Hit \"play\", and watch what happens. How do the plants behave now?\n\n(Also, you can now control how fast the simulation runs!)",
+        "draw": 4,
+        "fps": 60,
+        "play": true
+    },
+    "states": [
+        {
+            "id": 0,
+            "icon": "",
+            "name": "blank",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0.005,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 1,
+                            "actions": []
+                        }
+                    ]
+                },
+                {
+                    "probability": 0.01,
+                    "actions": [
+                        {
+                            "stateID": "5",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_random"
+                }
+            ],
+            "description": "Grows Strong Trees & Jerk Weeds, but Jerk Weeds grow twice as fast."
+        },
+        {
+            "id": 4,
+            "icon": "🐻",
+            "name": "bear",
+            "actions": [],
+            "description": "TREES, ONLY DEATH AWAITS YOU"
+        },
+        {
+            "id": 1,
+            "icon": "🌳",
+            "name": "strong tree",
+            "actions": [
+                {
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": "4",
+                    "actions": [
+                        {
+                            "stateID": 0,
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                },
+                {
+                    "sign": ">=",
+                    "num": 4,
+                    "stateID": "5",
+                    "actions": [
+                        {
+                            "stateID": 0,
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ],
+            "description": "Invincible to fire, but if four or more of its neighbors are Jerk Weeds, it'll be choked of nutrients and die. Also, can be killed by bears."
+        },
+        {
+            "id": 5,
+            "icon": "🌱",
+            "name": "jerk weed",
+            "actions": [
+                {
+                    "probability": 0.0001,
+                    "actions": [
+                        {
+                            "stateID": "2",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_random"
+                },
+                {
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": "2",
+                    "actions": [
+                        {
+                            "stateID": "2",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                },
+                {
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": "4",
+                    "actions": [
+                        {
+                            "stateID": 0,
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ],
+            "description": "Flammable, and sometimes spontaneously catches on fire. Also, can be killed by bears."
+        },
+        {
+            "id": 2,
+            "icon": "🔥",
+            "name": "fire",
+            "actions": [
+                {
+                    "type": "go_to_state",
+                    "stateID": 0,
+                    "actions": []
+                }
+            ],
+            "description": "Burns away."
+        }
+    ],
+    "world": {
+        "update": "simultaneous",
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 98
+            },
+            {
+                "stateID": 4,
+                "parts": 0
+            },
+            {
+                "stateID": 1,
+                "parts": 1
+            },
+            {
+                "stateID": 5,
+                "parts": 1
+            },
+            {
+                "stateID": 2,
+                "parts": 0
+            }
+        ],
+        "size": {
+            "width": 40,
+            "height": 34
+        }
+    }
+}

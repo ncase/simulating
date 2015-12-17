@@ -1,0 +1,161 @@
+body{
+	margin:0;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	font-size: 20px;
+	font-weight: 100;
+
+}
+
+b, strong{
+	font-weight: bold;
+}
+
+/** THE TITLE **/
+.splash{
+
+	background: #000;
+	overflow: hidden;
+
+	position: relative;
+	width: 100%;
+	height: 550px;
+	margin-bottom: 50px;
+
+}
+.splash > div{
+	
+	width: 100%;
+	min-width: 960px;
+	position: absolute;
+	height: 1em;
+
+	color: #fff;
+	text-align: center;
+	font-family: 'Sniglet';
+
+	text-shadow: 0px 0px 20px #000, 0px 0px 20px #000;
+
+	pointer-events:none;
+
+}
+.splash > iframe{
+	position: absolute;
+	left:-65px;
+	width: 1500px;
+	height: 100%;
+	border: none;
+}
+#splash_hand_container{
+	bottom: 0;
+    height: 75px;
+}
+#splash_hand{
+	margin: 0 auto;
+    width: 210px;
+    height: 75px;
+    background: url(its_interactive.png);
+    position: relative;
+    left: 360px;
+}
+
+/** THE ESSAY **/
+.words{
+	width: 600px;
+	margin: 25px auto;
+	line-height: 1.3em;
+	text-align: justify;
+}
+
+/** QUESTIONS **/
+.words .reader_input{
+	width: 100%;
+	font-family: Helvetica, Arial, sans-serif;
+	background: #eee;
+	font-size: 20px;
+	font-weight: 100;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color:#333;
+	margin-top:5px;
+}
+.words .reader_choice{
+	overflow: hidden;
+	border-radius: 5px;
+}
+.words .reader_choice label{
+	display: block;
+	width: 100%;
+	padding: 5px;
+	cursor: pointer;
+}
+.words .reader_choice label:nth-child(odd){
+	background: #eee;
+}
+.words .reader_choice label:nth-child(even){
+	background: #ddd;
+}
+.words .reader_reflect span:nth-child(n+2){
+	display: none;
+}
+
+/** EXAMPLES **/
+.example{
+	width: 800px;
+	margin: 50px auto;
+}
+.example div#title{
+	font-size: 30px;
+}
+.example div#description, .example div#afterword{
+	font-size: 17px;
+	color: #888;
+	margin: 5px 0 15px 0;
+	line-height: 1.5em;
+}
+.example div#description > div{
+	height: 10px;
+}
+.example iframe{
+	width: 800px;
+	height: 450px;
+	border: 1px solid #ddd;
+	display: block;
+	margin: 0;
+	margin-top: 10px;
+}
+
+/** THE HEADERS **/
+.fancy_header{
+	width:100%;
+	height: 1em;
+	padding: 30px 0 50px 0;
+	background:#000;
+	color:#fff;
+	text-align:center;
+	font-size: 50px;
+	margin: 50px 0;
+	font-family: 'Sniglet';
+}
+
+/** CREDITS **/
+#credits{
+	background:#222;
+	width:100%;
+	height:500px;
+}
+
+/** SOCIAL **/
+#social{
+	background: #eee;
+	width:100%;
+	height:100px;
+}
+
+
+/** JOKE **/
+#joke_divider{
+	margin-bottom:1000px;
+}

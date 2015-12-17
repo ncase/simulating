@@ -1,0 +1,120 @@
+{
+    "meta": {
+        "description": "Bears wipe out any trees next to them. Yeah don't ask how.\n\n1. Watch how the fire spreads.\n\n2. Hit \"pause\", then hit \"new\".\n\n3. Click and drag across the grid to make \"walls\" of bears. Divide the forest into 10 small sections. What happens now?",
+        "draw": 4,
+        "fps": 30,
+        "play": true
+    },
+    "states": [
+        {
+            "id": 0,
+            "icon": "",
+            "name": "blank",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0.01,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 1,
+                            "actions": []
+                        }
+                    ]
+                }
+            ],
+            "description": "Grows trees."
+        },
+        {
+            "id": 4,
+            "icon": "🐻",
+            "name": "bear",
+            "actions": [],
+            "description": "I HATE TREES. RAWR."
+        },
+        {
+            "id": 1,
+            "icon": "🌲",
+            "name": "tree",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0.0001,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 2,
+                            "actions": []
+                        }
+                    ]
+                },
+                {
+                    "type": "if_neighbor",
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": 2,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 2,
+                            "actions": []
+                        }
+                    ]
+                },
+                {
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": "4",
+                    "actions": [
+                        {
+                            "stateID": 0,
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ],
+            "description": "Catches on fire if hit by lightning, or if a neighbor's on fire. Gets killed if next to a bear."
+        },
+        {
+            "id": 2,
+            "icon": "🔥",
+            "name": "fire",
+            "actions": [
+                {
+                    "type": "go_to_state",
+                    "stateID": 0,
+                    "actions": []
+                }
+            ],
+            "description": "Burns away."
+        }
+    ],
+    "world": {
+        "update": "simultaneous",
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 98
+            },
+            {
+                "stateID": 4,
+                "parts": 0
+            },
+            {
+                "stateID": 1,
+                "parts": 2
+            },
+            {
+                "stateID": 2,
+                "parts": 0
+            }
+        ],
+        "size": {
+            "width": 40,
+            "height": 34
+        }
+    }
+}

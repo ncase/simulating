@@ -1,0 +1,110 @@
+{
+    "meta": {
+        "description": "🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲\n\nHowdy! 🌻 This (prototype) is a tool that lets you simulate systems of the world. In emoji.\n\nMy hope is that this can help people make more stuff like Parable of the Polygons, interactives that help people understand the complex systems of the world we live in. Also, emoji.\n\nIn this simulation, you can edit EVERYTHING. Draw on the grid, modify the rules, even change these very words you're reading! And at the end, you can save and share your creation. That's the cool thing: there is *no* difference between playing & making, between reading & writing.\n\nThat's the Forest Fire model to your left. Pretty, isn't it? Scroll down, and you'll find the rules for it, exposed for you to play with. Have fun!\n\n(P.S: 10 points to the first person to make Conway's Game of Life with the 💩 emoji)"
+    },
+    "states": [
+        {
+            "id": 0,
+            "icon": "",
+            "name": "blank",
+            "description": "Blank spots grow trees. (adjust the growth rate below)",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0.004,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 1,
+                            "actions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "icon": "🌲",
+            "name": "tree",
+            "description": "Trees can get hit by lightning. Also, if any of their neighbors are on fire, they'll also catch on fire.\n\n(P.S: To replace emoji icons, click the current icon, and paste in a new emoji. If you're on a Mac, you can hold down Control+Command+Space. Otherwise, copy-paste emoji from somewhere else like GetEmoji.com)",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0.0001,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": "3",
+                            "actions": []
+                        }
+                    ]
+                },
+                {
+                    "type": "if_neighbor",
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": 2,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 2,
+                            "actions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "icon": "⚡️",
+            "name": "lightning",
+            "description": "Sets the spot on fire, what a jerk.",
+            "actions": [
+                {
+                    "stateID": "2",
+                    "type": "go_to_state",
+                    "actions": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "icon": "🔥",
+            "name": "fire",
+            "description": "This fire just burns it all away.",
+            "actions": [
+                {
+                    "type": "go_to_state",
+                    "stateID": 0,
+                    "actions": []
+                }
+            ]
+        }
+    ],
+    "world": {
+        "update": "simultaneous",
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 100
+            },
+            {
+                "stateID": 1,
+                "parts": 0
+            },
+            {
+                "stateID": 3,
+                "parts": 0
+            },
+            {
+                "stateID": 2,
+                "parts": 0
+            }
+        ],
+        "size": {
+            "width": 25,
+            "height": 20
+        }
+    }
+}

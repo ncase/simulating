@@ -1,0 +1,380 @@
+body{
+	margin:0;
+	overflow: hidden;
+	display: none;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	font-size: 16px;
+}
+
+div{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/***************
+THE GRID
+***************/
+
+#grid_container{
+	width: 60%;
+	height: 100%;
+	float: left;
+	position: relative;
+}
+
+#grid, #grid_bg{
+	position: absolute;
+	margin: auto;
+	top:0; left:0; right:0; bottom:0;
+	cursor: default;
+}
+#grid>div, #grid_bg>div{
+}
+#grid>div>div, #grid_bg>div>div{
+	float:left;
+}
+#grid>div>div{
+	line-height: 1em;
+	text-align: center;
+}
+#grid_bg, #grid_bg>div>div{
+	border: 1px solid #eee;
+}
+
+/***************
+THE EDITOR
+***************/
+
+#editor_container{
+	min-width: 340px;
+	width: 40%;
+	height: 100%;
+
+	position: absolute;
+	right: 0;
+
+	background: #ddd;
+	overflow-y: scroll;
+}
+#editor{
+	margin: 40px 40px 40px 20px;
+}
+#editor .editor_state{
+	margin-bottom: 35px;
+}
+#editor .editor_state_header{
+	height: 40px;
+	overflow: hidden;
+}
+#editor .editor_title{
+	font-size: 27px;
+	margin-bottom: 25px;
+}
+#editor .editor_title span{
+	font-weight: bold;
+}
+#editor textarea{
+
+	font-family: Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+
+    background: none;
+    margin: 0;
+	border: none;
+	
+	width: 100%;
+    resize: none;
+    overflow: hidden;
+    
+}
+#editor .editor_textarea{
+    background: #ccc;
+    padding: 10px;
+}
+#editor .editor_state > textarea{
+	background: #ccc;
+	color: #666;
+	padding: 10px;
+	margin: 10px 0;
+}
+#editor input[type=text], #editor input[type=number]{
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 100;
+
+	background: none;
+	border:1px solid #aaa;
+	border-radius: 3px;
+
+}
+#editor input.editor_icon{
+	font-size:30px;
+	text-align: center;
+	width:40px;
+	height:40px;
+	background: none;
+	border-right: none;
+	display: block;
+	float: left;
+
+	border-radius: 5px 0 0 5px;
+}
+#editor input[type=text].editor_name{
+	font-size:20px;
+	width: 200px;
+	height:40px;
+	padding: 5px 10px;
+	display: block;
+	float: left;
+
+	border-radius: 0 5px 5px 0;
+}
+#editor input[type=text].editor_number{
+	font-size: 16px;
+    width: 40px;
+    cursor: col-resize;
+
+    border:none;
+    border-bottom: 2px dotted #aaa;
+    border-radius: 0;
+
+}
+#editor .editor_new_action{
+	position: relative;
+	left: -20px;
+	width: 50px;
+	height: 20px;
+}
+#editor .editor_new_action div{
+	width: 40px;
+	height: 20px;
+	padding: 0 5px;
+	border:1px solid #aaa;
+	border-radius: 5px;
+	position: absolute;
+
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: 15px;
+
+	text-align: center;
+	color: #aaa;
+}
+#editor .editor_new_action select{
+	opacity: 0;
+	position: absolute;
+	width: 50px;
+	cursor: pointer;
+}
+#editor .editor_fancy_button{
+	border-radius: 5px;
+	width: 240px;
+	height: 40px;
+	background: #aaa;
+
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: 20px;
+	line-height: 40px;
+	color: #ddd;
+
+	cursor: pointer;
+
+}
+#editor .editor_fancy_button:hover{
+	background: #b1b1b1;
+}
+#editor .editor_fancy_button#save_changes{
+	background: #333;
+}
+#editor .editor_fancy_button#save_changes:hover{
+	background: #555;
+}
+#editor .editor_fancy_button span{
+	font-size: 40px;
+    width: 40px;
+    display: block;
+    float: left;
+    text-align: center;
+    position: relative;
+    border-right: 1px solid #ddd;
+    line-height: 30px;
+    height: 40px;
+    margin-right: 10px;
+}
+#editor .editor_save_link{
+	width:100%;
+	font-size: 14px;
+}
+#editor select{
+	/*font-size: 50px;*/
+	max-width:120px;
+}
+#editor ul{
+	margin: 0;
+	padding-left: 30px;
+	list-style-type: none;
+	position: relative;
+}
+#editor li{
+	padding-left: 0px;
+	list-style-type: none;
+	position: relative;
+	margin-bottom: 5px;
+}
+#editor li > div.delete_action{
+	width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -20px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+#editor div.delete_state{
+	width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    opacity: 0.3;
+}
+#editor li > div.delete_action:hover, #editor div.delete_state:hover{
+	opacity: 0.6;
+}
+
+#editor div.proportions{
+	overflow: hidden;
+}
+#editor div.proportions > div{
+	overflow: hidden;
+}
+#editor div.proportions > div > span{
+	width:1em;
+	height: 1em;
+	display: inline-block;
+	border-right: 1px solid #aaa;
+	padding-right: 5px;
+	margin-right: 5px;
+}
+#editor div.proportions > div > input[type=range]{
+	width: 230px;
+}
+#editor hr{
+	margin: 40px 0;
+    border: none;
+    height: 4px;
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+}
+
+/***************
+THE PLAY CONTROLS
+***************/
+
+#play_container{
+	padding: 10px 0;
+    width: 60%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #888;
+}
+#play_controls{
+	width: 430px;
+	height: 40px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#play_controls > div{
+	float: left;
+}
+#play_controls > div.control_button{
+	background: #fff;
+
+	margin:0 5px;
+	padding: 5px;
+
+	line-height: 30px;
+	text-align: center;
+	font-weight: normal;
+
+	-webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    -ms-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    transition: background 0.2s;
+
+	cursor: pointer;
+}
+#play_controls > div.control_button:hover{
+	background: #eee;
+}
+#play_controls > div.control_speed{
+	width:100px;
+	height:35px;
+	margin: 5px;
+	margin-bottom: 0;
+}
+#play_controls > div.control_speed > input{
+	width:100%; margin:0;
+}
+#play_controls > div.control_speed > div{
+	/*width: 13px;
+	height: 16px;
+    line-height: 16px;*/
+    font-size: 14px;
+}
+#play_controls > div.control_divider{
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	width:3px;
+	height: 100%;
+	margin: 0 5px;
+}
+#play_controls > #play_reset{
+	width:40px;
+}
+#play_controls > #play_pause{
+	width:50px;
+}
+#play_controls > #play_pause[paused=true]{
+	background: #333;
+	color: #fff;
+}
+#play_controls > #play_pause[paused=true]:hover{
+	background: #444;
+}
+#play_controls > #play_step{
+	width:40px;
+}
+#play_controls > #play_draw{
+	width:80px;
+}
+#play_controls > #play_draw > div{
+	float: right;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    font-size: 25px;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 5px;
+}
+#play_controls[basic]{
+	width: 265px;
+}
+#play_controls[basic] > div.control_speed{
+	display: none;
+}
+#play_controls[basic] > #play_step{
+	display: none;
+}
+
