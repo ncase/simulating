@@ -51,7 +51,7 @@
 	<p>
 		Point is, the world is filled with complex systems.
 		They may seem impossible to change or comprehend,
-		but I believe all of us can — and must — learn to
+		but I believe all of us can — and <i>must</i> — learn to
 		<b>think in systems</b>.
 	</p>
 	<p>
@@ -230,7 +230,7 @@
 <!-- 3: CHANGING LOOPS, AND PLANTS -->
 <div class="words">
 	<p>
-		Yup, you contained fire and helped more trees grow, by killing trees.
+		Yup, you contained fire and helped more trees grow, <i>by killing trees</i>.
 		And yes, forest firefighters actually do this!
 		They make “firebreaks” by removing small trees, underbrush, and other flammable shtuff,
 		to prevent wildfires from spreading through.
@@ -238,9 +238,9 @@
 		which also reduces the balancing loop of 🌲📈→🔥📈→🌲📉.
 	</p>
 	<p>
-		And that is how you change a system.
+		And <i>that</i> is how you change a system.
 		Not by fiddling with numbers, or fighting the symptoms,
-		but by changing the core loops.
+		but by <i>changing the core loops.</i>
 	</p>
 	<!--
 	Footnote?
@@ -273,30 +273,62 @@
 		I’ve balanced these two so that, without your intervention,
 		they’ll get a 50/50 split of the land.
 		What do you predict will happen now, when you lay down firebreak walls?
-		(Think loopy: what feedback loops are changed?)
+		(Think <i>loopy</i>: what feedback loops are changed?)
 	</p>
 	<p>
-		* 🌳=🌱: They’ll still have an even split.
-		<br>
-		* 🌳&gt;🌱: Strong Trees will beat out the Jerk Trees.
-		<br>
-		* 🌳&lt;🌱: Strong Trees will be overrun by the Jerk Trees.
-		<br>
-		* Something completely different.
+		<form name="predict_species_2" class="reader_choice">
+		<label>
+			<input type="radio" name="prediction" value="same" checked>
+			🌳=🌱: They’ll still have an even split.
+		</label>
+		<label>
+			<input type="radio" name="prediction" value="tree">
+			🌳&gt;🌱: Strong Trees will beat out the Jerk Weeds.
+		</label>
+		<label>
+			<input type="radio" name="prediction" value="weed">
+			🌳&lt;🌱: Strong Trees will be overrun by Jerk Weeds.
+		</label>
+		<label>
+			<input type="radio" name="prediction" value="what">
+			Something completely different.
+		</label>
+		</form>
 	</p>
 	<p>
-		And just for kicks, let’s ask another “What If?”
-		What if you do the complete opposite of fire suppression,
-		and randomly light parts of the forest on fire?
+		And just for kicks, let’s ask another “What If”.
+		What if you do the complete opposite of making firebreaks,
+		and <i>keep setting random parts of the forest on fire?</i>
 	</p>
 	<p>
-		* 🌳=🌱: They’ll still have an even split.
-		<br>
-		* 🌳&gt;🌱: Strong Trees will beat out the Jerk Trees.
-		<br>
-		* 🌳&lt;🌱: Strong Trees will be overrun by the Jerk Trees.
-		<br>
-		* 🐻💥😩: Smokey Bear will roundhouse kick me in the face | no
+		<script>
+		window.SMOKEY_JOKE = function(){
+			document.getElementById("smokey_joke_radio").setAttribute("disabled",true);
+			document.getElementById("smokey_joke_span").style.textDecoration = "line-through";
+			document.getElementById("smokey_joke_label").style.cursor = "default";
+			window.SMOKEY_JOKE = function(){ /*nothing*/ };
+		};
+		</script>
+		<form name="predict_species_2" class="reader_choice">
+		<label>
+			<input type="radio" name="prediction" value="same" checked>
+			🌳=🌱: They’ll still have an even split.
+		</label>
+		<label>
+			<input type="radio" name="prediction" value="tree">
+			🌳&gt;🌱: Strong Trees will beat out the Jerk Weeds.
+		</label>
+		<label>
+			<input type="radio" name="prediction" value="weed">
+			🌳&lt;🌱: Strong Trees will be overrun by Jerk Weeds.
+		</label>
+		<label id="smokey_joke_label" onmouseover="SMOKEY_JOKE()">
+			<span id="smokey_joke_span">
+				<input id="smokey_joke_radio" type="radio" name="prediction" value="what">
+				<span style="letter-spacing:-4px; margin-right:4px">🐻💥😩</span>: Smokey Bear will roundhouse kick me in the face.
+			</span>
+		</label>
+		</form>
 	</p>
 	<p>
 		And here we go...
