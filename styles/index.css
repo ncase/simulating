@@ -3,8 +3,7 @@ body{
 
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: 100;
-	font-size: 20px;
-	font-weight: 100;
+	font-size: 22px;
 
 }
 
@@ -103,7 +102,10 @@ b, strong{
 
 /** EXAMPLES **/
 .example{
+	/*
 	width: 800px;
+	*/
+	width: 880px;
 	margin: 50px auto;
 }
 .example div#title{
@@ -119,8 +121,14 @@ b, strong{
 	height: 10px;
 }
 .example iframe{
+	
+	/*
 	width: 800px;
 	height: 450px;
+	*/
+	width: 880px;
+	height: 495px;
+
 	border: 1px solid #ddd;
 	display: block;
 	margin: 0;
