@@ -150,8 +150,11 @@ as well as serialize & deserialize.
 		{ icon: "🐚" }
 	];
 	Model.generateNewEmoji = function(){
+		return { icon: "💩" };
+		/*
 		emojiIndex = (emojiIndex+1)%emojis.length;
 		return emojis[emojiIndex];
+		*/
 	};
 
 })(window);

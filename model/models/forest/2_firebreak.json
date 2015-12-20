@@ -1,9 +1,9 @@
 {
     "meta": {
-        "description": "Bears wipe out any trees next to them. Yeah don't ask how.\n\n1. Watch how the fire spreads.\n\n2. Hit \"pause\", then hit \"new\".\n\n3. Click and drag across the grid to make \"walls\" of bears. Divide the forest into 10 small sections. What happens now?",
-        "draw": 4,
+        "description": "1. Make a [+new] object! Give it whatever name + emoji you want. Example: [💩tree killer]\n\n2. Give [🌲tree] this new rule:\n“If at least 1 neighbor is a\n[💩tree killer], turn into [blank]”\n\n3. Below the grid, click on “draw” until your new object shows up.\n\n4. Click-and-drag on the grid to divide the world up into a dozen or more sections -- walls can be curvy, sections can be unequal.\n\n5. Press [play] and watch! What do the forest & its fires do now?",
+        "draw": 1,
         "fps": 30,
-        "play": true
+        "play": false
     },
     "states": [
         {
@@ -24,13 +24,6 @@
                 }
             ],
             "description": "Grows trees."
-        },
-        {
-            "id": 4,
-            "icon": "🐻",
-            "name": "bear",
-            "actions": [],
-            "description": "I HATE TREES. RAWR."
         },
         {
             "id": 1,
@@ -60,22 +53,9 @@
                             "actions": []
                         }
                     ]
-                },
-                {
-                    "sign": ">=",
-                    "num": 1,
-                    "stateID": "4",
-                    "actions": [
-                        {
-                            "stateID": 0,
-                            "type": "go_to_state",
-                            "actions": []
-                        }
-                    ],
-                    "type": "if_neighbor"
                 }
             ],
-            "description": "Catches on fire if hit by lightning, or if a neighbor's on fire. Gets killed if next to a bear."
+            "description": "Catches on fire if hit by lightning, or if a neighbor's on fire."
         },
         {
             "id": 2,
@@ -97,15 +77,11 @@
         "proportions": [
             {
                 "stateID": 0,
-                "parts": 98
-            },
-            {
-                "stateID": 4,
-                "parts": 0
+                "parts": 95
             },
             {
                 "stateID": 1,
-                "parts": 2
+                "parts": 5
             },
             {
                 "stateID": 2,

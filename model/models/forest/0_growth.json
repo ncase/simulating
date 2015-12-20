@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "In all of these sims, you can edit EVERYTHING. There is *no* difference in playing & making, in reading & writing.\n\nScroll down to change stuff!",
+        "description": "You can edit EVERYTHING in these sims. The rules, the art, even this text! In fact, all the sims in this blog post were made with *this exact same editor*.\n\nFeel free to click the grid on the left to create fire, or scroll down to change the art & rules!",
         "draw": 2,
         "fps": 15,
         "play": true
@@ -13,17 +13,17 @@
             "actions": [
                 {
                     "type": "if_random",
-                    "probability": 0.002,
+                    "probability": 0.003,
                     "actions": [
                         {
                             "type": "go_to_state",
-                            "stateID": 1,
+                            "stateID": "1",
                             "actions": []
                         }
                     ]
                 }
             ],
-            "description": "Grows trees. (Adjust growth below!)"
+            "description": "Blank spots grow trees.\n\n(You can freely change the rules, or even add *new* rules, and they'll take affect immediately! Try it out:)"
         },
         {
             "id": 1,
@@ -37,23 +37,25 @@
                     "actions": [
                         {
                             "stateID": "2",
-                            "type": "go_to_state"
+                            "type": "go_to_state",
+                            "actions": []
                         }
                     ],
                     "type": "if_neighbor"
                 }
             ],
-            "description": "Trees can catch on fire.\n\n(To replace emoji, click the icon, and paste in a new emoji: 🎄 If you're on a Mac, you can press Control+Command+Space to get emoji. Otherwise, copy-paste emoji from somewhere like GetEmoji.com)"
+            "description": "Trees can catch on fire.\n\n(You can also change the art! Just click the icon & paste in a new emoji. Here's a few you can copy-paste in:\n🍀🎄🌵🌴🌿\nIf you're on a Mac, you can also press Control+Command+Space to get emoji. Otherwise, copy-paste from somewhere like Emojipedia.org)"
         },
         {
             "id": 2,
             "icon": "🔥",
             "name": "fire",
-            "description": "Burns away.\n\n(You can also add new rules, even create new objects! The only limit is your ✨🌟IMAGINATION🌟✨)",
+            "description": "Fire burns away.\n\n(Finally, you can also create new objects! The only limit is your\n✨🌟IMAGINATION🌟✨)",
             "actions": [
                 {
                     "stateID": 0,
-                    "type": "go_to_state"
+                    "type": "go_to_state",
+                    "actions": []
                 }
             ]
         }

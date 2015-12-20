@@ -287,7 +287,7 @@ THE PLAY CONTROLS
     color: #888;
 }
 #play_controls{
-	width: 430px;
+	width: 440px;
 	height: 40px;
 	margin: 0 auto;
 	overflow: hidden;
@@ -339,7 +339,7 @@ THE PLAY CONTROLS
 	margin: 0 5px;
 }
 #play_controls > #play_reset{
-	width:40px;
+	width:50px;
 }
 #play_controls > #play_pause{
 	width:50px;
@@ -369,7 +369,7 @@ THE PLAY CONTROLS
     margin-left: 5px;
 }
 #play_controls[basic]{
-	width: 265px;
+	width: 275px;
 }
 #play_controls[basic] > div.control_speed{
 	display: none;

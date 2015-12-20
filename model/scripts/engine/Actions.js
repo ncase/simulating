@@ -124,7 +124,7 @@ Actions.if_random = {
 	name: "With a X% chance...",
 
 	props: {
-		probability: 0.05,
+		probability: 0.01,
 		actions:[]
 	},
 

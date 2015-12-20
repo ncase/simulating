@@ -1,7 +1,7 @@
 {
     "meta": {
-        "description": "1. Just watch for a minute. How do the plants behave normally?\n\n2. Hit \"pause\", then hit \"new\".\n\n3. Draw a few bear-walls. Make around 10 small sections.\n\n4. Hit \"play\", and watch what happens. How do the plants behave now?\n\n(Also, you can now control how fast the simulation runs!)",
-        "draw": 4,
+        "description": "1. Watch what happens normally.\n\n2. [pause] sim, then hit [reset]\n\n3. EXPERIMENT #1:\nDraw walls to divide the grid into a dozen or more sections. Again, walls can be curvy & unequal. Press [play]. What happens now?\n\n4. [pause] sim, then hit [reset]\n\n5. EXPERIMENT #2:\nGive [blank] a new rule: “With a 1% chance, turn into [🔥fire].” Press [play]. What happens now?",
+        "draw": 6,
         "fps": 60,
         "play": true
     },
@@ -37,30 +37,10 @@
             "description": "Grows Strong Trees & Jerk Weeds, but Jerk Weeds grow twice as fast."
         },
         {
-            "id": 4,
-            "icon": "🐻",
-            "name": "bear",
-            "actions": [],
-            "description": "TREES, ONLY DEATH AWAITS YOU"
-        },
-        {
             "id": 1,
             "icon": "🌳",
             "name": "strong tree",
             "actions": [
-                {
-                    "sign": ">=",
-                    "num": 1,
-                    "stateID": "4",
-                    "actions": [
-                        {
-                            "stateID": 0,
-                            "type": "go_to_state",
-                            "actions": []
-                        }
-                    ],
-                    "type": "if_neighbor"
-                },
                 {
                     "sign": ">=",
                     "num": 4,
@@ -73,9 +53,22 @@
                         }
                     ],
                     "type": "if_neighbor"
+                },
+                {
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": "6",
+                    "actions": [
+                        {
+                            "stateID": 0,
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
                 }
             ],
-            "description": "Invincible to fire, but if four or more of its neighbors are Jerk Weeds, it'll be choked of nutrients and die. Also, can be killed by bears."
+            "description": "Invincible to fire, but can be choked out by Jerk Weeds, Also, gets killed by tree-killers."
         },
         {
             "id": 5,
@@ -109,7 +102,7 @@
                 {
                     "sign": ">=",
                     "num": 1,
-                    "stateID": "4",
+                    "stateID": "6",
                     "actions": [
                         {
                             "stateID": 0,
@@ -120,7 +113,7 @@
                     "type": "if_neighbor"
                 }
             ],
-            "description": "Flammable, and sometimes spontaneously catches on fire. Also, can be killed by bears."
+            "description": "Flammable, and sometimes spontaneously catches on fire. Also, gets killed by tree-killers."
         },
         {
             "id": 2,
@@ -134,6 +127,13 @@
                 }
             ],
             "description": "Burns away."
+        },
+        {
+            "id": 6,
+            "icon": "💩",
+            "name": "tree killer",
+            "description": "I AM THE END, AND THERE SHALL BE NO MERCY.",
+            "actions": []
         }
     ],
     "world": {
@@ -142,22 +142,22 @@
         "proportions": [
             {
                 "stateID": 0,
-                "parts": 98
-            },
-            {
-                "stateID": 4,
-                "parts": 0
+                "parts": 96
             },
             {
                 "stateID": 1,
-                "parts": 1
+                "parts": 2
             },
             {
                 "stateID": 5,
-                "parts": 1
+                "parts": 2
             },
             {
                 "stateID": 2,
+                "parts": 0
+            },
+            {
+                "stateID": 6,
                 "parts": 0
             }
         ],
