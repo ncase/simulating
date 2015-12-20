@@ -43,7 +43,7 @@
 		A few years ago, I lived in California.
 		Back then, it was (and still is) going through a nasty drought,
 		causing severe water shortages and seasons of wildfires.
-		Anyone trying to fix it would have to deal with a messy mix of
+		Anyone trying to fix these would have to deal with a messy mix of
 		environmental, economic, and political systems...
 		all of which came together to create the
 		perfect lack-of-rain-let-alone-a-storm.
@@ -84,11 +84,11 @@
 	<p>
 		So, in a way... Financial crises are like forest fires.
 		Terrorist groups are like termite colonies.
-		Pandemics are like a GIF everyone keeps sharing even though it’s already two days old.
+		Pandemics are like a GIF everyone keeps sharing even though it’s not that funny.
 		Since you can learn some core lessons about <i>all</i> systems from <i>any</i> system,
 		let’s stick with our forest sim, and add one more rule:
 	</p>
-	<p>
+	<p style="text-align:center">
 		🌲→🔥: Trees can get struck by lightning &amp; catch on fire.
 	</p>
 	<p>
@@ -173,7 +173,7 @@
 		</span>
 
 	</p>
-	<p>
+	<p style="text-align:center">
 		🌲📈→🔥📈→🌲📉→🔥📉→🌲📈⟲
 	</p>
 	<p>
@@ -186,10 +186,11 @@
 		The first kind of feedback loop is the <b>reinforcing loop</b>,
 		where more gets you even more.
 		For example, in our simulation, fire creates more fire.
-		This kind of loop leads to exponential growth.
+		This kind of loop tends towards exponential growth.
 	</p>
-	<p>
-		more leads to more: 🔥📈→🔥📈
+	<p style="text-align:center">
+		more leads to more:<br>
+		🔥📈→🔥📈
 	</p>
 	<p>
 		The second kind is the <b>balancing loop</b>,
@@ -201,10 +202,11 @@
 		That’s your balancing loop.
 		In our sim, fire makes more fire, but it can’t go on forever,
 		because it'll run out of trees to burn.
-		This kind of loop creates cyclical ups-and-downs.
+		This kind of loop tends to make cyclical ups-and-downs.
 	</p>
-	<p>
-		more leads to less: 🔥📈→🌲📉→🔥📉
+	<p style="text-align:center">
+		more leads to less:<br>
+		🔥📈→🌲📉→🔥📉
  	</p>
 	<p>
 		This is why we’re so bad at handling complex issues.
@@ -213,16 +215,16 @@
 		then there <i>is</i> no root cause!
 	</p>
 	<p>
-		But that doesn’t mean we can’t still find ways to deal with complex problems.
-		Again, simulations can help.
-		In this next bit, you’re going to save the forest by <i>killing trees</i>:
+		But that doesn’t mean we can’t find solutions.
+		Again, sims can help us ask “What If?”, and try out different strategies...
+		such as saving a forest, by <i>killing trees</i>:
 	</p>
 </div>
 
 <!-- 2: CREATE A TREE-KILLING SOLUTION -->
 <div class="example">
 	<div id="title">
-		<b>A Forest</b> Where You’re In Charge Now, Somehow, I Guess
+		<b>A Forest</b> Where You Show Trees No Mercy
 	</div>
 	<iframe src="model?local=forest/2_firebreak&play=1&edit=1"></iframe>
 </div>
@@ -276,17 +278,17 @@
 		(Think <i>loopy</i>: what feedback loops are changed?)
 	</p>
 	<p>
-		<form name="predict_species_2" class="reader_choice">
+		<form name="predict_plants_1" class="reader_choice">
 		<label>
 			<input type="radio" name="prediction" value="same" checked>
 			🌳=🌱: They’ll still have an even split.
 		</label>
 		<label>
-			<input type="radio" name="prediction" value="tree">
+			<input type="radio" name="prediction" value="strong">
 			🌳&gt;🌱: Strong Trees will beat out the Jerk Weeds.
 		</label>
 		<label>
-			<input type="radio" name="prediction" value="weed">
+			<input type="radio" name="prediction" value="jerk">
 			🌳&lt;🌱: Strong Trees will be overrun by Jerk Weeds.
 		</label>
 		<label>
@@ -309,17 +311,17 @@
 			window.SMOKEY_JOKE = function(){ /*nothing*/ };
 		};
 		</script>
-		<form name="predict_species_2" class="reader_choice">
+		<form name="predict_plants_2" class="reader_choice">
 		<label>
 			<input type="radio" name="prediction" value="same" checked>
 			🌳=🌱: They’ll still have an even split.
 		</label>
 		<label>
-			<input type="radio" name="prediction" value="tree">
+			<input type="radio" name="prediction" value="strong">
 			🌳&gt;🌱: Strong Trees will beat out the Jerk Weeds.
 		</label>
 		<label>
-			<input type="radio" name="prediction" value="weed">
+			<input type="radio" name="prediction" value="jerk">
 			🌳&lt;🌱: Strong Trees will be overrun by Jerk Weeds.
 		</label>
 		<label id="smokey_joke_label" onmouseover="SMOKEY_JOKE()">
@@ -345,19 +347,209 @@
 
 <!-- 4: REFLECT, SELF-ORG, AND REAL LIFE FORESTS -->
 <div class="words">
+	<p>
+		Before we reflect on your predictions,
+		did you notice how the plants formed <i>clusters</i>,
+		even though <i>no rule told them to?</i>
+		Scientists call this <b>self-organization</b>,
+		when order comes from the bottom up.
+		This is contrary to the popular belief
+		that order <i>must</i> come from the top down.
+		Self-organization also means a system
+		can automatically <b>adapt</b> to new situations,
+		for better or worse.
+		Which brings us to your predictions...
+	</p>
+	<p name="predict_plants_1" class="reader_reflect">
+		<span value="same">
+		PREDICTION #1: you thought your firebreaks would <i>not</i> affect the ratio of plants, which is an understandable guess! However, in an interconnected system, changing one part usually changes all the others, thanks to self-organization. Here, walls limit fire, fire limits Jerks, and Jerks limit Strongs.
+		</span>
+		<span value="strong">
+		PREDICTION #1: you thought your firebreaks would help the Strong Tree win. I assume you guessed that if firebreaks made the <i>forest</i> more fireproof, it should make the <i>trees</i> more fireproof, too. However, thanks to self-organization, the whole is <i>completely different</i> from the sum of its parts. So while your walls <i>did</i> lead to less fire, less fire means more Jerks, and more Jerks mean less Strongs.
+		</span>
+		<span value="jerk">
+		PREDICTION #1: you thought your firebreaks would let the Jerk Tree win. And you were totally correct! Your walls limit fire, fire limits Jerks, and Jerks limit Strongs. Let’s stop to appreciate that you held <i>three different system relationships in your head</i>, and accurately predicted how they would self-organize!
+		</span>
+		<span value="what">
+		PREDICTION #1: you thought the plants would do something nuts. Maybe you thought they’d cycle back and forth, like an earlier sim did. However, because the Strong Tree doesn’t affect fire <i>or</i> Jerks, there’s no loop there, and thus no Jerk-Strong cycle. (There <i>are</i> other loops, though) Instead, what happened was: your walls led to less fire, less fire meant more Jerks, and more Jerks meant less Strongs. That’s how they self-organized.
+		</span>
+	</p>
+	<p style="text-align:center">
+		🔥📉→🌱📈→🌳📉
+	</p>
+	<p name="predict_plants_2" class="reader_reflect">
+		<span value="same">
+		PREDICTION #2: you thought setting stuff on fire would not change the plant ratio. But instead, more fire led to Strong Trees winning, and therefore, <i>less</i> fire. Paradoxical. What happened is same logic as before, except with “more” and “less” <i>flipped around:</i>
+		</span>
+		<span value="strong">
+		PREDICTION #2: you thought setting stuff on fire would help the Strong Tree win. And, you’re right! Not only that, adding more fire also leads to <i>less</i> fire in the long run, paradoxically. It’s the same logic as before, except with “more” and “less” <i>flipped around:</i>
+		</span>
+		<span value="jerk">
+		PREDICTION #2: you thought setting stuff on fire would let the Jerk Tree win. And that seems like it should make sense, wouldn’t a more flammable forest have more flammable trees? However, as you discovered, adding more fire made the forest <i>stronger</i>, and paradoxically, <i>reduces</i> fire in the long run! It’s the same logic as before, except with “more” and “less” <i>flipped around:</i>
+		</span>
+	</p>
+	<p style="text-align:center">
+		🔥📈→🌱📉→🌳📈<br>
+		(ALSO: 🌱📉→🔥📉)
+	</p>
+	</p>
+	<p>
+		You might be skeptical about these results.
+		And I hope you are! It’s good to be critical!
+		I mean, this sim is basically saying 
+		<i>fire is good for the forest</i>.
+		That can't be right.
+	</p>
+	<p>
+		🌲But consider the Jack Pine.
+		Its pine cones are sealed with wax,
+		and can't release its seeds until <i>a forest fire melts the wax away</i>.
+		Our hypothetical Strong Tree was merely immune to wildfires.
+		The Jack Pine, one of many fire-dependent trees,
+		<i>is born out of fire</i> — like the legendary Phoenix.
+	</p>
+	<p>
+		🔥Also, consider that Native Americans and Australian Aboriginals
+		used to <i>deliberately</i> set fires,
+		under safe weather conditions,
+		to maintain forest diversity and stability.
+		In contrast, the U.S. Forest Service once decreed
+		that <i>all</i> fires must be put out by 10 a.m. the next day.
+		The plan backfired (haha),
+		and made forests unhealthier in the long run.
+		But to this day, there's still heated debate (haha)
+		over if we should let more fires burn,
+		or even <i>actively set fires.</i>
+	</p>
+	<p>
+		🏠Heck, <i>I’m</i> also skeptical if we should set more fires.
+		There are legitimate concerns about smoke,
+		and accidentally burning people’s homes down.
+		I don’t envy whoever has to make the decision to let someone lose their home,
+		so that in the future, others won’t.
+	</p>
+	<p>
+		These are complex issues.
+		But that’s exactly why we need to think in <i>systems</i>, to tackle these problems.
+		Not just for forest fires, but <i>all</i> the global challenges we face:
+	</p>
 </div>
 
 <!-- 4: OTHER COMPLEX WORLD PROBLEMS -->
+<div class="example">
+	<div id="title">
+		<b>A Simulation</b> [...]
+	</div>
+	<iframe src="adasdsa"></iframe>
+</div>
 
 <!-- 5: THE STAKES OF EDU SIMS -->
 <div class="words">
+	<p>
+		A few months ago, on September 12th, 2015,
+		California had the third-worst wildfire in its entire history.
+		As the fire spread, dozens of towns were evacuated, people fleeing from homes and schools.
+		Not everybody escaped.
+		One month later, when the fire was finally contained,
+		70,000 acres had been burnt, and 1000 homes were lost.
+		Four people died.
+	</p>
+	<p>
+		That’s probably way too serious for a web page with emoji in its title,
+		but them’s the stakes.
+	</p>
+	<p>
+		If more small- and medium-sized fires were allowed to burn up fuel beforehand,
+		this disaster might not have been as bad.
+		However, due to public pressure to aggressively put out fires —
+		which is very, very, <i>very</i> understandable given tragedies like the one above —
+		forest firefighters can’t let as many fires burn as they probably should.
+	</p>
+	<p>
+		Like I said, forest firefighters <i>already</i> use computer sims to tackle wildfires.
+		What if they had simpler versions of those sims,
+		to educate people about the <i>systems</i> behind forests?
+		Would they have had public support to try better, counterintuitive solutions?
+		And if that's the case, what about explaining all the <i>other</i> complex systems in the world?
+	</p>
+	<p>
+		This is what this whole article has been leading up to.
+	</p>
+	<p>
+		I want you to think of a big problem that <i>you</i> personally and deeply care about.
+		Knowing what you know now about systems, feedback loops, and self-organization...
+		you can now <b>create, save, and share your very own simulation:</b>
+	</p>
 </div>
 
-<!-- 5: MAKE YOUR OWN SIM -->
+<!-- 5: MAKE YOUR OWN SIM // remember to add arrow at bottom -->
+<div style="background:#222; padding:30px 0; margin:50px 0">
+<div class="example" style="margin:0 auto; color:#fff; width:1040px;">
+	<div id="title">
+		<b>A Simulation</b> Made By You
+	</div>
+	<iframe style="border-color:#000; width:1040px; height:585px;" src="asdasasa"></iframe>
+</div>
+</div>
 
 <!-- EPILOGUE: FROM THE BOTTOM UP -->
 <div class="words">
-</div>
+	<p>
+	Scientists, policymakers, forest firefighters...
+	they all <i>already</i> use simulations to explain, explore, and experiment
+	with real-world systems.
+	However, these sims usually aren’t meant to be used or understood by us,
+	the public — <i>the very people those real-world systems impact the most.</i>
+	</p>
+	<p>
+	This interactive essay was born out of 1) boredom,
+	and 2) a “What If?”
+	What if complex systems were explained in a way all of us could understand,
+	or, what if we had a tool to think and talk in systems?
+	<i>What if playing IS making, reading IS writing, and learning IS teaching?</i>
+	</p>
+	<p>
+	This isn’t just a more effective way of <i>transmitting</i> knowledge.
+	No matter how good they are,
+	transmissions will always fade out over time.
+	</p>
+	<p style="text-align:center">
+	💡→
+	<span style="opacity:0.9">💡→</span>
+	<span style="opacity:0.7">💡→</span>
+	<span style="opacity:0.5">💡→</span>
+	<span style="opacity:0.4">💡→</span>
+	<span style="opacity:0.3">💡→</span>
+	<span style="opacity:0.25">💡→</span>
+	<span style="opacity:0.2">💡→</span>
+	<span style="opacity:0.15">💡</span>
+	</p>
+	<p>
+	Imagine a policymaker creating a sim that
+	teaches you about the system, the problem, and their solutions.
+	It might be hailed as revolutionary step for education and “learning by doing”,
+	but I think we can go a step further.
+	</p>
+	<p>
+	What if, instead, we could also <i>change</i> their model?
+	We could use the simulation to try different “What If?” scenarios,
+	create new solutions, challenge their core assumptions,
+	build onto the model, and bring in our <i>own</i> knowledge and life experiences to the system.
+	We wouldn’t just be transmitting knowledge, we’d be <i>constructing</i> it.
+	</p>
+	<p style="text-align:center">
+	💡→💡💡→💡💡💡→💡💡💡💡→💡💡💡💡💡
+	</p>
+	<p>
+	We’d have a reinforcing loop of people building off on each others’ systems and solutions.
+	We’d have more feedback loops between policymakers and the people they affect.
+	We could self-organize to understand the world from the bottom up,
+	maybe even <i>change the world from the bottom up.</i>
+	</p>
+	<p>
+	And all we have to do is start thinking in systems, and see the forest for the trees. 🌲🌲🌲
+	</p>
+<div>
 
 </body>
 </html>
