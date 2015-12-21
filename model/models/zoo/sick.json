@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "SICK\n\n- why you don't need to vaccinate the whole herd, for the whole herd to be immune.\n- why a disease that's *too* deadly to the individual, actually makes it *less* deadly to the group.\n- why more crowded cities are more prone to disease.",
+        "description": "SICK\n\n- why you don't need to immunize the whole herd, for the whole herd to be immune.\n- TIPPING POINT, THOUGH.\n- also, why a disease that's *too* deadly to the individual, actually makes it *less* deadly to the group.\n- also also, why more crowded cities are more prone to disease.",
         "draw": 2,
         "fps": 30,
         "play": true
@@ -43,8 +43,8 @@
         {
             "id": 3,
             "icon": "😎",
-            "name": "vaccinated",
-            "description": "Zero chance of getting infected by sick neighbors. (You can, of course, change this assumption below!)",
+            "name": "immunized",
+            "description": "Ten times less likely to get infected by sick neighbors. (vaccines aren't *perfect*, of course)",
             "actions": [
                 {
                     "sign": ">=",
@@ -52,7 +52,7 @@
                     "stateID": "2",
                     "actions": [
                         {
-                            "probability": 0,
+                            "probability": 0.005,
                             "actions": [
                                 {
                                     "stateID": "2",
@@ -71,10 +71,10 @@
             "id": 2,
             "icon": "😰",
             "name": "sick",
-            "description": "Can recover... or die. (Change its recovery & fatality rates below!)",
+            "description": "Can recover... or die. (change its recovery & fatality rates below!)",
             "actions": [
                 {
-                    "probability": 0,
+                    "probability": 0.03,
                     "actions": [
                         {
                             "stateID": "5",
@@ -85,7 +85,7 @@
                     "type": "if_random"
                 },
                 {
-                    "probability": 0,
+                    "probability": 0.001,
                     "actions": [
                         {
                             "stateID": "4",
@@ -121,15 +121,15 @@
             },
             {
                 "stateID": 1,
-                "parts": 95
+                "parts": 89
+            },
+            {
+                "stateID": 3,
+                "parts": 11
             },
             {
                 "stateID": 2,
                 "parts": 0
-            },
-            {
-                "stateID": 3,
-                "parts": 5
             },
             {
                 "stateID": 4,
