@@ -115,7 +115,7 @@ Editor.create = function(){
 		Editor.dom.appendChild(saveChanges);
 
 		// Save your changes, label & link
-		var saveLabel = Editor.createLabel("when you save your model, you'll get a link to it here:")
+		var saveLabel = Editor.createLabel("when you save your model, you'll get a link here:")
 		saveLabel.style.display = "block";
 		saveLabel.style.margin = "10px 0";
 		Editor.dom.appendChild(saveLabel);
