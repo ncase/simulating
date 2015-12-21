@@ -1,77 +1,82 @@
 {
     "meta": {
-        "description": "The growth rate starts at 0.2%. What happens when you increase it to 0.5%? 1%? 5%?\n\n(Also, you can now pause the sim, and click-and-drag on the grid to \"draw\" objects onto it)",
+        "description": "SCHELLING'S MODEL",
         "draw": 0,
-        "fps": 30,
-        "play": true
+        "fps": 15,
+        "play": false
     },
     "states": [
         {
             "id": 0,
             "icon": "",
             "name": "blank",
-            "actions": []
+            "actions": [],
+            "description": "Blank spots don't do anything."
         },
         {
             "id": 1,
-            "icon": "▲",
-            "name": "triangle",
+            "icon": "🐭",
+            "name": "mouse",
             "actions": [
                 {
                     "sign": "<",
-                    "num": 3,
+                    "num": 4,
                     "stateID": "1",
                     "actions": [
                         {
-                            "space": 0,
+                            "space": "1",
                             "spotStateID": 0,
                             "leaveStateID": 0,
-                            "type": "move_to"
+                            "type": "move_to",
+                            "actions": []
                         }
                     ],
                     "type": "if_neighbor"
                 }
-            ]
+            ],
+            "description": "If less than 33% of my (non-blank) neighbors are mice, I'll move somewhere else on the grid."
         },
         {
             "id": 2,
-            "icon": "▦",
-            "name": "square",
+            "icon": "🐹",
+            "name": "hamster",
             "actions": [
                 {
                     "sign": "<",
-                    "num": 3,
+                    "num": 4,
                     "stateID": "2",
                     "actions": [
                         {
-                            "space": 0,
+                            "space": "1",
                             "spotStateID": 0,
                             "leaveStateID": 0,
-                            "type": "move_to"
+                            "type": "move_to",
+                            "actions": []
                         }
                     ],
                     "type": "if_neighbor"
                 }
-            ]
+            ],
+            "description": "If less than 33% of my (non-blank) neighbors are hamsters, I'll move somewhere else on the grid."
         }
     ],
     "world": {
         "size": {
-            "width": 25,
+            "width": 30,
             "height": 25
         },
         "proportions": [
             {
                 "stateID": 0,
-                "parts": 50
+                "parts": 33
             },
             {
                 "stateID": 1,
-                "parts": 25
+                "parts": 33
             },
             {
                 "stateID": 2,
-                "parts": 25
+                "parts": 33
             }
         ],
         "neighborhood": "moore"

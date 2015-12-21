@@ -145,4 +145,40 @@ $.bigfoot({
 	buttonMarkup: "<div class='bigfoot-footnote__container'> <button class=\"bigfoot-footnote__button\" id=\"{{SUP:data-footnote-backlink-ref}}\" data-footnote-number=\"{{FOOTNOTENUM}}\" data-footnote-identifier=\"{{FOOTNOTEID}}\" alt=\"See Footnote {{FOOTNOTENUM}}\" rel=\"footnote\" data-bigfoot-footnote=\"{{FOOTNOTECONTENT}}\"> 💬{{SUP:label}} </button></div>"
 });
 
+/***
+
+ZOO SELECT
+
+***/
+
+var zoo_iframe = document.getElementById("zoo_iframe");
+zoo_iframe.onload = onscroll;
+var zoo_options = document.querySelectorAll("#zoo_select > div");
+
+// Zoo click handler for all of them
+var onSelectZoo = function(event){
+
+	var simName = event.target.getAttribute("sim");
+	zoo_iframe.src = "model?local=zoo/"+simName+"&play=2&edit=1";
+
+	// All de-selected...
+	for(var i=0;i<zoo_options.length;i++){
+		var option = zoo_options[i];
+		option.removeAttribute("selected");
+	}
+
+	// ...except the one just selected, obviously.
+	event.target.setAttribute("selected","true");
+
+};
+for(var i=0;i<zoo_options.length;i++){
+	var option = zoo_options[i];
+	option.onclick = onSelectZoo;
+}
+
+// Run on the first one.
+onSelectZoo({
+	target: document.querySelector("#zoo_select > div:nth-child(1)")
+});
+
 },false);

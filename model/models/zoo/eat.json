@@ -1,4 +1,10 @@
 {
+    "meta": {
+        "description": "EAT",
+        "draw": 0,
+        "fps": 30,
+        "play": true
+    },
     "states": [
         {
             "actions": [

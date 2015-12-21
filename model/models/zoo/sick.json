@@ -1,0 +1,149 @@
+{
+    "meta": {
+        "description": "SICK\n\n- why you don't need to vaccinate the whole herd, for the whole herd to be immune.\n- why a disease that's *too* deadly to the individual, actually makes it *less* deadly to the group.\n- why more crowded cities are more prone to disease.",
+        "draw": 2,
+        "fps": 30,
+        "play": true
+    },
+    "states": [
+        {
+            "actions": [],
+            "icon": "",
+            "id": 0,
+            "name": "blank",
+            "description": "Does nothing."
+        },
+        {
+            "id": 1,
+            "icon": "😌",
+            "name": "susceptible",
+            "description": "Can get infected by sick neighbors.",
+            "actions": [
+                {
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": "2",
+                    "actions": [
+                        {
+                            "probability": 0.05,
+                            "actions": [
+                                {
+                                    "stateID": "2",
+                                    "type": "go_to_state",
+                                    "actions": []
+                                }
+                            ],
+                            "type": "if_random"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "icon": "😎",
+            "name": "vaccinated",
+            "description": "Zero chance of getting infected by sick neighbors. (You can, of course, change this assumption below!)",
+            "actions": [
+                {
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": "2",
+                    "actions": [
+                        {
+                            "probability": 0,
+                            "actions": [
+                                {
+                                    "stateID": "2",
+                                    "type": "go_to_state",
+                                    "actions": []
+                                }
+                            ],
+                            "type": "if_random"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "icon": "😰",
+            "name": "sick",
+            "description": "Can recover... or die. (Change its recovery & fatality rates below!)",
+            "actions": [
+                {
+                    "probability": 0,
+                    "actions": [
+                        {
+                            "stateID": "5",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_random"
+                },
+                {
+                    "probability": 0,
+                    "actions": [
+                        {
+                            "stateID": "4",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_random"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "icon": "💀",
+            "name": "ded",
+            "description": "stays ded",
+            "actions": []
+        },
+        {
+            "id": 5,
+            "icon": "😓",
+            "name": "recovered",
+            "description": "If you recovered and didn't die, your immune system now knows how to beat the disease, so you can't get sick again. \n\n(BTW, this is how vaccines work! They train your immune system with a half-dead virus, a \"punching bag\", instead of the real deal)",
+            "actions": []
+        }
+    ],
+    "world": {
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 0
+            },
+            {
+                "stateID": 1,
+                "parts": 95
+            },
+            {
+                "stateID": 2,
+                "parts": 0
+            },
+            {
+                "stateID": 3,
+                "parts": 5
+            },
+            {
+                "stateID": 4,
+                "parts": 0
+            },
+            {
+                "stateID": 5,
+                "parts": 0
+            }
+        ],
+        "size": {
+            "height": 25,
+            "width": 30
+        },
+        "update": "simultaneous"
+    }
+}

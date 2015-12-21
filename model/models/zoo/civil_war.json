@@ -1,0 +1,191 @@
+{
+    "meta": {
+        "description": "CIVIL WAR SIMULATOR\n\nIf violent conflict happens to a spot's neighbors, that spot will also turn aggressive.\n\nIf a spot is surrounded by aggressive members from the other side, they'll attack the spot, and the spot goes into violent conflict.\n\nA spot in violent conflict will, after a while, emerge controlled by either one of two sides. It's a 50/50 chance. But either way, it'll still be aggressive.\n\nRESULTS:\n1. At first, not much violence for a long time...\n2. And then, BAM! One angry group starts picking up a lot of steam, jutting forward bit by bit.\n3. A COUNTER-FORCE EMERGES\n4. Then the whole grid is swept up in anger, most violence at the border, and goes from mixed to totally segregated.\n5. Sometimes one group dominates, or multiple factions emerge, maybe islands of peace. Aghhhhhhhhh! SO MUCH EMERGENCE!",
+        "draw": 5,
+        "fps": 60,
+        "play": true
+    },
+    "states": [
+        {
+            "id": 0,
+            "icon": "",
+            "name": "blank",
+            "description": "Blank spots grow trees. (adjust the growth rate below)",
+            "actions": []
+        },
+        {
+            "id": 1,
+            "icon": "🐱",
+            "name": "cat",
+            "description": "[how this thing acts]",
+            "actions": [
+                {
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": "5",
+                    "actions": [
+                        {
+                            "stateID": "2",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                },
+                {
+                    "sign": ">=",
+                    "num": 4,
+                    "stateID": "4",
+                    "actions": [
+                        {
+                            "stateID": "5",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "icon": "😾",
+            "name": "angry cat",
+            "description": "[how this thing acts]",
+            "actions": [
+                {
+                    "sign": ">=",
+                    "num": 4,
+                    "stateID": "4",
+                    "actions": [
+                        {
+                            "stateID": "5",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "icon": "🐶",
+            "name": "dog",
+            "description": "[how this thing acts]",
+            "actions": [
+                {
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": "5",
+                    "actions": [
+                        {
+                            "stateID": "4",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                },
+                {
+                    "sign": ">=",
+                    "num": 4,
+                    "stateID": "2",
+                    "actions": [
+                        {
+                            "stateID": "5",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "icon": "🐺",
+            "name": "angry dog",
+            "description": "[how this thing acts]",
+            "actions": [
+                {
+                    "sign": ">=",
+                    "num": 4,
+                    "stateID": "2",
+                    "actions": [
+                        {
+                            "stateID": "5",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "icon": "💥",
+            "name": "conflict",
+            "description": "[how this thing acts]",
+            "actions": [
+                {
+                    "probability": 0.05,
+                    "actions": [
+                        {
+                            "stateID": "2",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_random"
+                },
+                {
+                    "probability": 0.05,
+                    "actions": [
+                        {
+                            "stateID": "4",
+                            "type": "go_to_state",
+                            "actions": []
+                        }
+                    ],
+                    "type": "if_random"
+                }
+            ]
+        }
+    ],
+    "world": {
+        "update": "simultaneous",
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 0
+            },
+            {
+                "stateID": 1,
+                "parts": 50
+            },
+            {
+                "stateID": 2,
+                "parts": 0
+            },
+            {
+                "stateID": 3,
+                "parts": 50
+            },
+            {
+                "stateID": 4,
+                "parts": 0
+            },
+            {
+                "stateID": 5,
+                "parts": 0
+            }
+        ],
+        "size": {
+            "width": 30,
+            "height": 25
+        }
+    }
+}

@@ -1,0 +1,115 @@
+{
+    "meta": {
+        "description": "Opinion Dynamics!\n\nIf at least 3 out of 8 neighbors have the opposite opinion, then I *might* switch. If at least 6 out of 8 neighbors have the opposite opinion, then I WILL switch.\n\nCan also DRAW BLANK BARRIERS.",
+        "draw": 0,
+        "fps": 30,
+        "play": false
+    },
+    "states": [
+        {
+            "id": 0,
+            "icon": "",
+            "name": "blank",
+            "description": "Blank spots grow trees. (adjust the growth rate below)",
+            "actions": []
+        },
+        {
+            "id": 1,
+            "icon": "🐱",
+            "name": "cat person",
+            "description": "[how this thing acts]",
+            "actions": [
+                {
+                    "sign": ">=",
+                    "num": 3,
+                    "stateID": "2",
+                    "actions": [
+                        {
+                            "probability": 0.02,
+                            "actions": [
+                                {
+                                    "stateID": "2",
+                                    "type": "go_to_state"
+                                }
+                            ],
+                            "type": "if_random"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                },
+                {
+                    "sign": ">=",
+                    "num": 6,
+                    "stateID": "2",
+                    "actions": [
+                        {
+                            "stateID": "2",
+                            "type": "go_to_state"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "icon": "🐶",
+            "name": "dog person",
+            "description": "[how this thing acts]",
+            "actions": [
+                {
+                    "sign": ">=",
+                    "num": 3,
+                    "stateID": "1",
+                    "actions": [
+                        {
+                            "probability": 0.02,
+                            "actions": [
+                                {
+                                    "stateID": "1",
+                                    "type": "go_to_state"
+                                }
+                            ],
+                            "type": "if_random"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                },
+                {
+                    "sign": ">=",
+                    "num": 6,
+                    "stateID": "1",
+                    "actions": [
+                        {
+                            "stateID": "1",
+                            "type": "go_to_state"
+                        }
+                    ],
+                    "type": "if_neighbor"
+                }
+            ]
+        }
+    ],
+    "world": {
+        "update": "simultaneous",
+        "neighborhood": "moore",
+        "proportions": [
+            {
+                "stateID": 0,
+                "parts": 0
+            },
+            {
+                "stateID": 1,
+                "parts": 50
+            },
+            {
+                "stateID": 2,
+                "parts": 50
+            }
+        ],
+        "size": {
+            "width": 40,
+            "height": 30
+        }
+    }
+}

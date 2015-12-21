@@ -1,10 +1,87 @@
 {
+    "meta": {
+        "description": "",
+        "draw": 0,
+        "fps": 30,
+        "play": true
+    },
     "states": [
         {
             "id": 0,
             "icon": "",
             "name": "blank",
-            "actions": []
+            "description": "Blank spots grow trees. (adjust the growth rate below)",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0.004,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 1,
+                            "actions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "icon": "🌲",
+            "name": "tree",
+            "description": "Trees can get hit by lightning. Also, if any of their neighbors are on fire, they'll also catch on fire.\n\n(P.S: To replace emoji icons, click the current icon, and paste in a new emoji. If you're on a Mac, you can hold down Control+Command+Space. Otherwise, copy-paste emoji from somewhere else like GetEmoji.com)",
+            "actions": [
+                {
+                    "type": "if_random",
+                    "probability": 0.0001,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": "3",
+                            "actions": []
+                        }
+                    ]
+                },
+                {
+                    "type": "if_neighbor",
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": 2,
+                    "actions": [
+                        {
+                            "type": "go_to_state",
+                            "stateID": 2,
+                            "actions": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "icon": "⚡️",
+            "name": "lightning",
+            "description": "Sets the spot on fire, what a jerk.",
+            "actions": [
+                {
+                    "stateID": "2",
+                    "type": "go_to_state",
+                    "actions": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "icon": "🔥",
+            "name": "fire",
+            "description": "This fire just burns it all away.",
+            "actions": [
+                {
+                    "type": "go_to_state",
+                    "stateID": 0,
+                    "actions": []
+                }
+            ]
         }
     ],
     "world": {
@@ -14,11 +91,23 @@
             {
                 "stateID": 0,
                 "parts": 100
+            },
+            {
+                "stateID": 1,
+                "parts": 0
+            },
+            {
+                "stateID": 3,
+                "parts": 0
+            },
+            {
+                "stateID": 2,
+                "parts": 0
             }
         ],
         "size": {
             "width": 25,
-            "height": 25
+            "height": 20
         }
     }
 }
