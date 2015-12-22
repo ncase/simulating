@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "1. Watch what happens normally.\n\n2. [pause] sim, then hit [reset]\n\n3. EXPERIMENT #1:\nDraw walls to divide the grid into a dozen or more sections. Again, walls can be curvy & unequal. Press [play]. What happens now?\n\n4. [pause] sim, then hit [reset]\n\n5. EXPERIMENT #2:\nGive [blank] a new rule: “With a 1% chance, turn into [🔥fire].” Press [play]. What happens now?",
+        "description": "EXPERIMENT #1:\n\n[Pause] sim, then hit [reset]. Draw walls to divide the grid into a dozen or more sections. Again, walls can be curvy & unequal. Press [play]. What happens now?\n\nEXPERIMENT #2:\n\n[Pause] sim, then hit [reset].  Give [blank] a new rule: “With a 1% chance, turn into [🔥fire].” Press [play]. What happens now?",
         "draw": 6,
         "fps": 60,
         "play": true
