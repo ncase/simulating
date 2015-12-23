@@ -148,60 +148,107 @@ subscribe("/ui/removeState",function(deleted_id){
 
 // Mouse down
 var Mouse = { x:0, y:0, pressed:false };
-var getMousePosition = function(event){
+var MouseLast = { x:0, y:0 };
+var MouseTiles = [];
+var getRealMouse = function(event){
 
-	var rx = event.clientX - Grid.dom.offsetLeft;
-	var ry = event.clientY - Grid.dom.offsetTop;
-	var x = Math.floor(rx/Grid.tileSize);
-	var y = Math.floor(ry/Grid.tileSize);
-
-	if(x<0) x=0;
-	if(x>=Grid.array[0].length) x=Grid.array[0].length-1;
-	if(y<0) y=0;
-	if(y>=Grid.array.length) y=Grid.array.length-1;
-
-	return {x:x, y:y};
+	Mouse.x = Math.floor((event.clientX - Grid.dom.offsetLeft)/Grid.tileSize); // from 0 to Width
+	Mouse.y = Math.floor((event.clientY - Grid.dom.offsetTop)/Grid.tileSize); // from 0 to Height
 
 };
-Grid.dom.addEventListener("mousedown",function(event){
-	Mouse.pressed = true;
-	var pos = getMousePosition(event);
-	Mouse.x = pos.x;
-	Mouse.y = pos.y;
-	changeCell();
-},false);
-Grid.dom.addEventListener("mousemove",function(event){
+var getMousedTiles = function(event){
 
-	if(!Mouse.pressed) return;
-	
-	var pos = getMousePosition(event);
+	// DO DA BLINE.
+	MouseTiles = bline(MouseLast.x, MouseLast.y, Mouse.x, Mouse.y);
 
-	// New position
-	if(pos.x!=Mouse.x || pos.y!=Mouse.y){
-		Mouse.x = pos.x;
-		Mouse.y = pos.y;
-		changeCell();
+};
+
+// Bresenham's Line algorithm, whatever lol
+function bline(x0, y0, x1, y1) {
+
+	var coords = [];
+
+	var dx = Math.abs(x1 - x0), sx = x0 < x1 ? 1 : -1;
+	var dy = Math.abs(y1 - y0), sy = y0 < y1 ? 1 : -1; 
+	var err = (dx>dy ? dx : -dy)/2;
+
+	while (true) {
+		coords.push({x:x0, y:y0});
+		if (x0 === x1 && y0 === y1) break;
+		var e2 = err;
+		if (e2 > -dx) { err -= dy; x0 += sx; }
+		if (e2 < dy) { err += dx; y0 += sy; }
 	}
+
+	return coords;
+
+}
+
+Grid.domContainer.addEventListener("mousedown",function(event){
+	
+	// Real Mouse
+	Mouse.pressed = true;
+	getRealMouse(event);
+
+	// Last Mouse
+	MouseLast.x = Mouse.x;
+	MouseLast.y = Mouse.y;
+
+	// Get & Change Moused Tiles
+	getMousedTiles();
+	changeTiles();
+
+},false);
+Grid.domContainer.addEventListener("mousemove",function(event){
+
+	// Not dragging? Fuggedaboutit.
+	if(!Mouse.pressed) return;
+
+	// Last & New
+	MouseLast.x = Mouse.x;
+	MouseLast.y = Mouse.y;
+	getRealMouse(event);
+	
+	// Get & Change Moused Tiles
+	getMousedTiles();
+	changeTiles();
 	
 },false);
 window.addEventListener("mouseup",function(event){
 	Mouse.pressed = false;
 },false);
 
-// Change state of cell
-var changeCell = function(){
+// Change state of dragged-over tiles
+var changeTiles = function(){
 
-	var x = Mouse.x;
-	var y = Mouse.y;
+	var WIDTH = Model.data.world.size.width;
+	var HEIGHT = Model.data.world.size.height;
 
-	// Get the agent there
-	var agent = Grid.array[y][x];
+	// For each coord...
+	for(var i=0;i<MouseTiles.length;i++){
 
-	// Swap agent to brush state
-	agent.forceState(Model.data.meta.draw);
+		var tile = MouseTiles[i];
+		var x = tile.x;
+		var y = tile.y;
+
+		// If tile is outta bounds, fuggeddaboutit.
+		if(x<0) continue;
+		if(x>WIDTH-1) continue;
+		if(y<0) continue;
+		if(y>HEIGHT-1) continue;
+
+		// Get agent
+		var agent = Grid.array[y][x];
+
+		// Swap agent to brush state
+		agent.forceState(Model.data.meta.draw);
+
+	}
 
 	// Update the rendering
-	publish("/grid/updateAgents");
+	if(MouseTiles.length>0){
+		publish("/grid/updateAgents");
+	}
 
 };
 
@@ -225,6 +272,7 @@ exports._makeScrubbable = function(input){
 		scrubPosition.x = e.clientX;
 		scrubPosition.y = e.clientY;
 		scrubStartValue = parseFloat(input.value);
+		e.preventDefault();
 	},false);
 	input.addEventListener("click",function(e){
 		e.target.select();

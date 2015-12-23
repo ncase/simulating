@@ -147,12 +147,12 @@ b, strong{
 
 	background: #fff;
 
-	width: 271px;
+	width: 273px;
 	height: 27px;
 	padding: 10px;
 	float: left; 
 	cursor: pointer;
-	opacity: 0.3;
+	opacity: 0.5;
 
 	-webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -161,10 +161,12 @@ b, strong{
     transition: all 0.2s;
 }
 #zoo_select > div:hover{
-	opacity: 0.7;
+	opacity: 1.0;
 }
 #zoo_select > div[selected]{
 	opacity: 1.0;
 	background: #eee;
 }
-
+#zoo_iframe{
+	/*margin-top:0;*/
+}

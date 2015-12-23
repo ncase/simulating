@@ -10,8 +10,8 @@
             "actions": [],
             "icon": "",
             "id": 0,
-            "name": "blank",
-            "description": "Does nothing."
+            "name": "empty spot",
+            "description": "Nobody's here."
         },
         {
             "id": 1,

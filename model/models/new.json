@@ -9,7 +9,7 @@
         {
             "id": 0,
             "icon": "",
-            "name": "blank",
+            "name": "empty spot",
             "actions": [
                 {
                     "type": "if_random",
@@ -23,7 +23,7 @@
                     ]
                 }
             ],
-            "description": "Grows trees. (Adjust growth below!)"
+            "description": "Grows trees."
         },
         {
             "id": 1,

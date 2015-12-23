@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "EXPERIMENT:\n\nThe tree growth rate starts at 0.3%. What happens when you increase it to 1%? 2%? 5%?\n\n(Also, you can now pause the sim, and click-and-drag on the grid to \"draw\" objects onto it)",
+        "description": "===== EXPERIMENT =====\n\nThe tree growth rate starts at 0.3%. What happens when you increase it to 1%? 2%? 5%?\n\n(Also, you can now pause the sim, and click-and-drag on the grid to \"draw\" things onto it)",
         "draw": 2,
         "fps": 30,
         "play": true
@@ -9,7 +9,7 @@
         {
             "id": 0,
             "icon": "",
-            "name": "blank",
+            "name": "empty spot",
             "actions": [
                 {
                     "type": "if_random",
@@ -23,7 +23,7 @@
                     ]
                 }
             ],
-            "description": "Grows trees. (Adjust growth below!)"
+            "description": "Grows trees. (Adjust the growth rate!)"
         },
         {
             "id": 1,

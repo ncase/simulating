@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "EXPERIMENT #1:\n\n[Pause] sim, then hit [reset]. Draw walls to divide the grid into a dozen or more sections. Again, walls can be curvy & unequal. Press [play]. What happens now?\n\nEXPERIMENT #2:\n\n[Pause] sim, then hit [reset].  Give [blank] a new rule: “With a 1% chance, turn into [🔥fire].” Press [play]. What happens now?",
+        "description": "===== EXPERIMENT #1 =====\n\n[PAUSE] sim, and [RESET] sim.\n\nDraw walls to divide the grid into a dozen or more sections. Again, walls can be curvy & unequal. \n\nPress [play]. What happens now?\n\n===== EXPERIMENT #2 =====\n\n[PAUSE] sim, and [RESET] sim. \n\nGive the Empty Spot a new rule: “With a 1% chance, turn into fire.” \n\nPress [play]. What happens now?",
         "draw": 6,
         "fps": 60,
         "play": true
@@ -9,7 +9,7 @@
         {
             "id": 0,
             "icon": "",
-            "name": "blank",
+            "name": "empty spot",
             "actions": [
                 {
                     "type": "if_random",
@@ -34,7 +34,7 @@
                     "type": "if_random"
                 }
             ],
-            "description": "Grows Strong Trees & Jerk Weeds, but Jerk Weeds grow twice as fast."
+            "description": "Grows Strongs & Jerks.\n\n(FOR EXPERIMENT #2: Click the LAST \"+new\" to add this new rule: “With a 1% chance, turn into fire.”)"
         },
         {
             "id": 1,
@@ -68,12 +68,12 @@
                     "type": "if_neighbor"
                 }
             ],
-            "description": "Invincible to fire, but can be choked out by Jerk Weeds, Also, gets killed by tree-killers."
+            "description": "Invincible to fire, but can be choked out by Jerks, Also, gets killed by tree-killers."
         },
         {
             "id": 5,
             "icon": "🌱",
-            "name": "jerk weed",
+            "name": "jerk tree",
             "actions": [
                 {
                     "probability": 0.0001,
@@ -130,7 +130,7 @@
         },
         {
             "id": 6,
-            "icon": "💩",
+            "icon": "✂︎",
             "name": "tree killer",
             "description": "I AM THE END, AND THERE SHALL BE NO MERCY.",
             "actions": []

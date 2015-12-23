@@ -9,7 +9,7 @@
         {
             "id": 0,
             "icon": "",
-            "name": "blank",
+            "name": "empty spot",
             "actions": [
                 {
                     "type": "if_random",
@@ -23,7 +23,7 @@
                     ]
                 }
             ],
-            "description": "Blank spots grow trees.\n\n(You can freely change the rules, or even add *new* rules, and they'll take affect immediately! Try it out:)"
+            "description": "Below are the rules for Empty Spots. You can freely change rules, even add new rules, and they'll take affect immediately! Try it out:"
         },
         {
             "id": 1,
@@ -44,13 +44,13 @@
                     "type": "if_neighbor"
                 }
             ],
-            "description": "Trees can catch on fire.\n\n(You can also change the art! Just click the icon & paste in a new emoji. Here's a few you can copy-paste in:\n🍀🎄🌵🌴🌿\nIf you're on a Mac, you can also press Control+Command+Space to get emoji. Otherwise, copy-paste from somewhere like Emojipedia.org)"
+            "description": "You can also change the art! Just click the icon & paste in a new emoji. Here's a few you can copy-paste in:\n🍀🎄🌵🌴🌿\n\nOther ways to get emoji:\nMac: press control+command+space\nOther: copy from Emojipedia.org"
         },
         {
             "id": 2,
             "icon": "🔥",
             "name": "fire",
-            "description": "Fire burns away.\n\n(Finally, you can also create new objects! The only limit is your\n✨🌟IMAGINATION🌟✨)",
+            "description": "Finally, you can even create new things with rules! The only limit is your\n✨🌟IMAGINATION🌟✨",
             "actions": [
                 {
                     "stateID": 0,

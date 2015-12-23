@@ -9,9 +9,9 @@
         {
             "id": 0,
             "icon": "",
-            "name": "blank",
+            "name": "empty spot",
             "actions": [],
-            "description": "Blank spots don't do anything."
+            "description": "Nobody's here."
         },
         {
             "id": 1,

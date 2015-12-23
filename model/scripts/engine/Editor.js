@@ -25,7 +25,7 @@ Editor.create = function(){
 	///// STATES DOM /////
 	//////////////////////
 
-	var title = Editor.createTitle("THE <span>RULES</span>");
+	var title = Editor.createTitle("<span>THINGS</span> WITH RULES");
 	Editor.dom.appendChild(title);
 
 	Editor.statesDOM = document.createElement("div");
@@ -44,7 +44,7 @@ Editor.create = function(){
 			id: Model.generateNewID(),
 			icon: emoji.icon,
 			name: "[new thing]",
-			description: "[how this thing acts]",
+			description: "Click icon & paste in new emoji:\nMac: press control+command+space\nOther: copy from Emojipedia.org",
 			actions: []
 		};
 

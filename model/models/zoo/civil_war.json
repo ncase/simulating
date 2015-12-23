@@ -9,8 +9,8 @@
         {
             "id": 0,
             "icon": "",
-            "name": "blank",
-            "description": "Blank spots grow trees. (adjust the growth rate below)",
+            "name": "empty spot",
+            "description": "Nobody's here.",
             "actions": []
         },
         {

@@ -146,7 +146,7 @@ Grid.updateSize = function(){
 	css += "#grid_bg>div>div{ width:"+(t-2)+"px; height:"+(t-2)+"px; }\n";
 	Grid.css.innerHTML = css;
 
-	// HTML JUST FOR THE GRID
+	// HTML JUST FOR THE GRID BACKGROUND
 	var html = "";
 	for(var y=0;y<Grid.array.length;y++){
 		html += "<div>";
@@ -155,25 +155,29 @@ Grid.updateSize = function(){
 	}
 	Grid.bg.innerHTML = html;
 
+	// HTML FOR THE REAL GRID
+	Grid.dom.innerHTML = html;
+
 };
 subscribe("/grid/updateSize",Grid.updateSize,false);
 subscribe("ui/resize",Grid.updateSize,false);
 
 Grid.updateAgents = function(){
 
-	// HTML - TODO: Update only if update/edit cell
-	var html = "";
+	// Update ONLY if the emoji is different
 	for(var y=0;y<Grid.array.length;y++){
-		html += "<div>";
 		for(var x=0;x<Grid.array[0].length;x++){
+
 			var agent = Grid.array[y][x];
 			var icon = Model.getStateByID(agent.stateID).icon;
-			html += "<div>"+icon+"</div>";
-		}
-		html += "</div>";
-	}
+			var currentIcon = Grid.dom.children[y].children[x].innerHTML;
 
-	Grid.dom.innerHTML = html;
+			if(icon!=currentIcon){
+				Grid.dom.children[y].children[x].innerHTML = icon;
+			}
+			
+		}
+	}
 
 };
 subscribe("/grid/updateAgents",Grid.updateAgents);
@@ -260,8 +264,8 @@ Grid.countNeighbors = function(agent,stateID){
 // Reset world, update the view, and resize to fit
 Grid.reinitialize = function(){
 	Grid.initialize();
-	publish("/grid/updateAgents");
 	publish("/grid/updateSize");
+	publish("/grid/updateAgents");
 };
 subscribe("/grid/reinitialize",Grid.reinitialize,false);
 

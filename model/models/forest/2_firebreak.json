@@ -1,7 +1,7 @@
 {
     "meta": {
-        "description": "1. Make a [+new] object! Give it whatever name + emoji you want. Example: [💩tree killer]\n\n2. Give [🌲tree] this new rule:\n“If at least 1 neighbor is a\n[💩tree killer], turn into [blank]”\n\n3. Below the grid, click on “draw” until your new object shows up.\n\n4. Click-and-drag on the grid to divide the world up into a dozen or more sections -- walls can be curvy, sections can be unequal.\n\n5. Press [play] and watch! What do the forest & its fires do now?",
-        "draw": 1,
+        "description": "===== EXPERIMENT =====\n\nClick-and-drag on the grid to draw walls, (walls can be curvy) to divide the world up into a dozen or more sections. (sections can be unequal)\n\nPress [play] and watch! How does the forest & fire act now?",
+        "draw": 3,
         "fps": 30,
         "play": false
     },
@@ -9,7 +9,7 @@
         {
             "id": 0,
             "icon": "",
-            "name": "blank",
+            "name": "empty spot",
             "actions": [
                 {
                     "type": "if_random",
@@ -53,9 +53,21 @@
                             "actions": []
                         }
                     ]
+                },
+                {
+                    "sign": ">=",
+                    "num": 1,
+                    "stateID": "3",
+                    "actions": [
+                        {
+                            "stateID": 0,
+                            "type": "go_to_state"
+                        }
+                    ],
+                    "type": "if_neighbor"
                 }
             ],
-            "description": "Catches on fire if hit by lightning, or if a neighbor's on fire."
+            "description": "Catches on fire if hit by lightning, or if a neighbor's on fire. If next to a Tree Killer, it gets cut down."
         },
         {
             "id": 2,
@@ -69,6 +81,13 @@
                 }
             ],
             "description": "Burns away."
+        },
+        {
+            "id": 3,
+            "icon": "✂︎",
+            "name": "tree killer",
+            "description": "Cuts down trees near it. (this rule is in the Tree section)",
+            "actions": []
         }
     ],
     "world": {
@@ -85,6 +104,10 @@
             },
             {
                 "stateID": 2,
+                "parts": 0
+            },
+            {
+                "stateID": 3,
                 "parts": 0
             }
         ],
