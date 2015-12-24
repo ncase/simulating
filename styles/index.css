@@ -1,4 +1,6 @@
 body{
+	
+	background: #fff;
 	margin:0;
 
 	font-family: Helvetica, Arial, sans-serif;
@@ -171,3 +173,13 @@ b, strong{
 	/*margin-top:0;*/
 	height: 550px;
 }
+
+/** STYLISH SHTUFF **/
+
+.dark{
+	background:#222;
+	color:#fff; 
+	padding:30px 0;
+	margin:50px 0;
+}
+

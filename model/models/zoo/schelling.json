@@ -1,8 +1,8 @@
 {
     "meta": {
-        "description": "A world of mice and hamsters. Each rodent is only *slightly* biased. They think: \"If less than 1/3 of my neighbors are like me, I'll move.\" Notice that they'd be *okay* being in the minority, yet when you hit [PLAY]...\n\nTwo important lessons:\n\n1. Just because society as a whole is X-ist, doesn't mean its individuals are.\n\n2. Just because very few individuals are X-ist, doesn't mean society as a whole isn't.\n\n(This model was made by Nobel Prize-winner Thomas Schelling)",
+        "description": "A world of mice and hamsters. Each rodent is only *slightly* biased. They think: \"If less than half of my neighbors are like me, I'll move somewhere else.\" But even though everyone's okay with an equal neighborhood, when you hit [PLAY]...\n\nTwo important lessons:\n\n1. Just because society as a whole is X-ist, doesn't mean its individuals are.\n\n2. Just because very few individuals are X-ist, doesn't mean society as a whole isn't.\n\n(This model was made by Nobel Prize-winner Thomas Schelling)",
         "draw": 0,
-        "fps": 15,
+        "fps": 10,
         "play": false
     },
     "states": [
@@ -34,7 +34,7 @@
                     "type": "if_neighbor"
                 }
             ],
-            "description": "If less than 33% of my (non-blank) neighbors are mice, I'll move somewhere else on the grid."
+            "description": "If less than half (4 out of 8 spots) of my neighbors are mice, I'll move somewhere else on the grid."
         },
         {
             "id": 2,
@@ -57,7 +57,7 @@
                     "type": "if_neighbor"
                 }
             ],
-            "description": "If less than 33% of my (non-blank) neighbors are hamsters, I'll move somewhere else on the grid."
+            "description": "If less than half (4 out of 8 spots) of my neighbors are hamsters, I'll move somewhere else on the grid."
         }
     ],
     "world": {
@@ -68,15 +68,15 @@
         "proportions": [
             {
                 "stateID": 0,
-                "parts": 33
+                "parts": 20
             },
             {
                 "stateID": 1,
-                "parts": 33
+                "parts": 40
             },
             {
                 "stateID": 2,
-                "parts": 33
+                "parts": 40
             }
         ],
         "neighborhood": "moore"
