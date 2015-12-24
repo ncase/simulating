@@ -35,7 +35,7 @@ Editor.create = function(){
 	// Button - Add a state!
 	var addState = document.createElement("div");
 	addState.className = "editor_fancy_button";
-	addState.innerHTML = "<span>+</span>new";
+	addState.innerHTML = "<span>+</span>make new thing";
 	addState.onclick = function(){
 
 		// New state config

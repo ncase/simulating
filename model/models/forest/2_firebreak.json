@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "===== EXPERIMENT =====\n\nClick-and-drag on the grid to draw walls, (walls can be curvy) to divide the world up into a dozen or more sections. (sections can be unequal)\n\nPress [play] and watch! How does the forest & fire act now?",
+        "description": "===== EXPERIMENT =====\n\n✂︎ Tree Killers, as their name suggests, kill trees next to them.\n\nClick-and-drag on the grid to draw walls of ✂︎, (walls can be curvy) to divide the world up into a dozen or more sections. (sections can be unequal)\n\nFinally, press [PLAY]! How does the forest & fire act now? Why?",
         "draw": 3,
         "fps": 30,
         "play": false

@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "CIVIL WAR SIMULATOR\n\nIf violent conflict happens to a spot's neighbors, that spot will also turn aggressive.\n\nIf a spot is surrounded by aggressive members from the other side, they'll attack the spot, and the spot goes into violent conflict.\n\nA spot in violent conflict will, after a while, emerge controlled by either one of two sides. It's a 50/50 chance. But either way, it'll still be aggressive.\n\nRESULTS:\n1. At first, not much violence for a long time...\n2. And then, BAM! One angry group starts picking up a lot of steam, jutting forward bit by bit.\n3. A COUNTER-FORCE EMERGES\n4. Then the whole grid is swept up in anger, most violence at the border, and goes from mixed to totally segregated.\n5. Sometimes one group dominates, or multiple factions emerge, maybe islands of peace. Aghhhhhhhhh! SO MUCH EMERGENCE!",
+        "description": "Seems peaceful & mixed, but is really a powder keg. Click & drag to create just a little conflict.\n\n💥: Conflict. A 50/50 chance a cat or dog \"wins\" the spot.\n🐱🐶: Normal. If a neighbor gets beaten up, they'll get angry.\n😾🐺: Angry. If four angry cats surround a dog, they'll attack it. Same for dogs attacking cats.\n\nWhat emerges:\n* Conflict hits a tipping point, and grows in bursts, not smoothly.\n* One angry group emerges, then counter-forces emerge, who might be even more violent.\n* Can result in one group dominating, or a \"stable\" war.",
         "draw": 5,
         "fps": 60,
         "play": true
@@ -185,7 +185,7 @@
         ],
         "size": {
             "width": 30,
-            "height": 25
+            "height": 28
         }
     }
 }

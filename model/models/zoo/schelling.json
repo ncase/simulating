@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "SCHELLING'S MODEL",
+        "description": "A world of mice and hamsters. Each rodent is only *slightly* biased. They think: \"If less than 1/3 of my neighbors are like me, I'll move.\" Notice that they'd be *okay* being in the minority, yet when you hit [PLAY]...\n\nTwo important lessons:\n\n1. Just because society as a whole is X-ist, doesn't mean its individuals are.\n\n2. Just because very few individuals are X-ist, doesn't mean society as a whole isn't.\n\n(This model was made by Nobel Prize-winner Thomas Schelling)",
         "draw": 0,
         "fps": 15,
         "play": false
@@ -63,7 +63,7 @@
     "world": {
         "size": {
             "width": 30,
-            "height": 25
+            "height": 28
         },
         "proportions": [
             {
