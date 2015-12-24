@@ -50,6 +50,10 @@ as well as serialize & deserialize.
 		// Reinitialize Grid
 		Grid.reinitialize();
 
+		// Back to original description
+		Editor.descriptionDOM.value = Model.data.meta.description;
+		Editor.descriptionDOM.oninput();
+
 		// Remove & recreate all the states
 		Editor.statesDOM.innerHTML = "";
 		Editor.createStatesUI(Editor.statesDOM, Model.data.states);

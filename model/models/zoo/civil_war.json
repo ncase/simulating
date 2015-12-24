@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "Seems peaceful & mixed, but is really a powder keg. Click & drag to create just a little conflict.\n\n💥: Conflict. A 50/50 chance a cat or dog \"wins\" the spot.\n🐱🐶: Normal. If a neighbor gets beaten up, they'll get angry.\n😾🐺: Angry. If four angry cats surround a dog, they'll attack it. Same for dogs attacking cats.\n\nWhat emerges:\n* Conflict hits a tipping point, and grows in bursts, not smoothly.\n* One angry group emerges, then counter-forces emerge, who might be even more violent.\n* Can result in one group dominating, or a \"stable\" war.",
+        "description": "Seems peaceful & mixed, but is a powder keg. Click around the grid 'til a conflict EXPLODES.\n\n💥: Conflict. A 50/50 chance a cat or dog \"wins\" the spot.\n🐱🐶: Peaceful. If a neighbor gets beaten up, they'll get angry. They gots grievances.\n😾🐺: Angry. If four angry cats surround a dog, they'll attack it. Same for dogs attacking cats.\n\nWhat emerges:\n* Conflict hits a tipping point, and grows in bursts, not smoothly.\n* One angry group emerges, then counter-forces emerge, who might be even more violent.\n* Can result in one group dominating, or a \"stable\" war.",
         "draw": 5,
         "fps": 60,
         "play": true
@@ -17,7 +17,7 @@
             "id": 1,
             "icon": "🐱",
             "name": "cat",
-            "description": "[how this thing acts]",
+            "description": "Peaceful, until conflict happens to someone they know. Also, can be attacked by angry dogs.",
             "actions": [
                 {
                     "sign": ">=",
@@ -51,7 +51,7 @@
             "id": 2,
             "icon": "😾",
             "name": "angry cat",
-            "description": "[how this thing acts]",
+            "description": "Has real grievances. Can still be attacked by angry dogs.",
             "actions": [
                 {
                     "sign": ">=",
@@ -72,7 +72,7 @@
             "id": 3,
             "icon": "🐶",
             "name": "dog",
-            "description": "[how this thing acts]",
+            "description": "Peaceful, until conflict happens to someone they know. Also, can be attacked by angry cats.",
             "actions": [
                 {
                     "sign": ">=",
@@ -106,7 +106,7 @@
             "id": 4,
             "icon": "🐺",
             "name": "angry dog",
-            "description": "[how this thing acts]",
+            "description": "Has real grievances. Can still be attacked by angry cats.",
             "actions": [
                 {
                     "sign": ">=",
@@ -127,7 +127,7 @@
             "id": 5,
             "icon": "💥",
             "name": "conflict",
-            "description": "[how this thing acts]",
+            "description": "Cats and dogs are equally likely to \"win\" the violent conflict.",
             "actions": [
                 {
                     "probability": 0.05,

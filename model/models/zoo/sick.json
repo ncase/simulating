@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "Click grid to start an epidemic.\n😌susceptibles can catch illness\n😎immunized are less likely to\n😰sick peeps can recover or die\n💀dead\n😓recovered, can't get sick again\n\nPublic health officials already use sims! Yes, sims frikkin' save lives!\n\nThis simulation explains:\n* herd immunity\n* the tipping point for herd immunity\n* why a virus that's *too* deadly, paradoxically, kills fewer people.\n* why crowded cities are more prone to disease.",
+        "description": "Click grid to start an epidemic.\n😌susceptibles can get infected\n😎immunized peeps are one-tenth as likely to get infected\n😰sick peeps can recover or die\n💀dead\n😓recovered, can't get sick again\n\nPublic health officials already use sims to fight epidemics, which means... 😎 SIMS SAVE LIVES.\n\nThis simulation explains:\n* herd immunity\n* the tipping point for herd immunity\n* why a virus that's *too* deadly, paradoxically, kills fewer people.\n* why crowded cities are more prone to disease.",
         "draw": 2,
         "fps": 30,
         "play": true
@@ -44,7 +44,7 @@
             "id": 3,
             "icon": "😎",
             "name": "immunized",
-            "description": "Ten times less likely to get infected by sick neighbors. (vaccines aren't *perfect*, of course)",
+            "description": "One-tenth as likely to get infected by sick neighbors. (vaccines aren't *perfect*, of course)",
             "actions": [
                 {
                     "sign": ">=",
@@ -101,7 +101,7 @@
             "id": 4,
             "icon": "💀",
             "name": "ded",
-            "description": "stays ded",
+            "description": "ded",
             "actions": []
         },
         {
