@@ -137,16 +137,6 @@ for(var i=0;i<reader_choices.length;i++){
 
 /***
 
-BIGFOOT - Footnotes 
-
-***/
-
-$.bigfoot({
-	buttonMarkup: "<div class='bigfoot-footnote__container'> <button class=\"bigfoot-footnote__button\" id=\"{{SUP:data-footnote-backlink-ref}}\" data-footnote-number=\"{{FOOTNOTENUM}}\" data-footnote-identifier=\"{{FOOTNOTEID}}\" alt=\"See Footnote {{FOOTNOTENUM}}\" rel=\"footnote\" data-bigfoot-footnote=\"{{FOOTNOTECONTENT}}\"> 💬{{SUP:label}} </button></div>"
-});
-
-/***
-
 ZOO SELECT
 
 ***/
