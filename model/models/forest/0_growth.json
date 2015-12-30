@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "You can edit EVERYTHING in these sims. The rules, the art, even this text! In fact, all the sims in this post were made with *this exact same editor*.\n\nFeel free to click the grid on the left to create fire, or scroll down to change the art & rules!",
+        "description": "You can edit EVERYTHING in these sims. The rules, the art, even this text! In fact, all the sims in this post were made with *this exact same editor*.\n\nClick the grid to start fire, or scroll down to change the art & rules!",
         "draw": 2,
         "fps": 15,
         "play": true
@@ -23,7 +23,7 @@
                     ]
                 }
             ],
-            "description": "Below are the rules for Empty Spots. You can freely change rules, even add new rules, and they'll take affect immediately! Try it out:"
+            "description": "Below are the rules for Empty Spots. You can freely change rules, even add new rules, and they'll take effect immediately! Try it out:"
         },
         {
             "id": 1,

@@ -17,7 +17,7 @@ if(local = getParameterByName("local")){ // note: "=" not "=="
 }else if(url = getParameterByName("url")){ // yup: "=" not "=="
     path = url;
 }else{
-    path = "models/blank.json";
+    path = "models/new.json";
 }
 
 // Load it & make it the model
