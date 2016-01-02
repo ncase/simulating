@@ -1,14 +1,20 @@
+/** OH DANG, IT'S FONTS **/
+@font-face {
+	font-family: 'Sniglet';
+	src: url("fonts/Sniglet-Regular.otf") format("opentype");
+}
+
+/** STANDARD TAG STUFF **/
 body{
 	
 	background: #fff;
 	margin:0;
 
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-weight: 100;
 	font-size: 22px;
 
 }
-
 b, strong{
 	font-weight: bold;
 }
@@ -32,22 +38,6 @@ a:hover{
 	margin-bottom: 50px;
 
 }
-.splash > div{
-	
-	width: 100%;
-	min-width: 960px;
-	position: absolute;
-	height: 1em;
-
-	color: #fff;
-	text-align: center;
-	font-family: 'Sniglet';
-
-	text-shadow: 0px 0px 20px #000, 0px 0px 20px #000;
-
-	pointer-events:none;
-
-}
 .splash > iframe{
 	position: absolute;
 	left:-65px;
@@ -55,7 +45,25 @@ a:hover{
 	height: 100%;
 	border: none;
 }
+.splash > div{
+	position: absolute;
+	pointer-events:none;
+}
+#splash_title{
+	width: 960px;
+	height: 280px;
+
+	margin:auto;
+	top:0; left:0; right:0; bottom:0;
+
+	color: #fff;
+	text-align: center;
+	font-family: 'Sniglet';
+
+	text-shadow: 0px 0px 20px #000, 0px 0px 20px #000;
+}
 #splash_hand_container{
+	width: 100%;
 	bottom: 0;
     height: 75px;
 }
@@ -194,6 +202,7 @@ a:hover{
 #credits{
 	width: 960px;
 	margin: 25px auto 50px auto;
+	text-align: justify;
 }
 #uncopyright{
 	width:100%;
@@ -202,7 +211,6 @@ a:hover{
 }
 #appendix_container{
 	overflow: hidden;
-	margin-bottom: 20px;
 }
 .appendix_title{
 	color:#fff;
@@ -212,6 +220,16 @@ a:hover{
 #further_reading{
 	width:600px;
 	float:left;
+	color: #888;
+}
+.further_book{
+	font-size:18px;
+	overflow:hidden;
+}
+.further_book img{
+	width:100px;
+	float:left;
+	margin-right:20px;
 }
 #supporters{
 	width:320px;
@@ -236,9 +254,18 @@ a:hover{
 	margin-bottom: 3px;
 }
 #social{
-	border: 1px solid #444;
+	margin-top: 50px;
 	width:100%;
-	height:50px;
+	text-align: center;
 }
-
+ul.share-buttons{
+	list-style: none;
+	padding: 0;
+}
+ul.share-buttons li{
+	display: inline;
+}
+ul.share-buttons img{
+	width: 50px;
+}
 

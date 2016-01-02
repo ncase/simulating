@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "Rodents are only slightly biased. Each one thinks: \"If less than half of my neighbors are like me, I'll move somewhere else.\" And though everyone's okay with an equal neighborhood, when you hit [PLAY]... bam.\n\nThis may seem like a depressing outcome, but I took away a more hopeful message: evil systems can still be filled with *good people*. We just gotta be very, very clever, and compassionate, to help them find their goodness.\n\n(This model was made by Nobel Prize-winner, Thomas Schelling)",
+        "description": "Rodents are slightly biased, but only slightly. Each one thinks: \"If less than half of my neighbors are like me, I'll move somewhere else.\" And though everyone's OK with an equal neighborhood, when you hit [PLAY]... bam.\n\nThis may seem like a depressing outcome, but I took away a more hopeful message: evil systems can still be filled with *good people*. We just gotta be very, very clever, and compassionate, to help them find their goodness.\n\n(This model was made by Nobel Prize-winner, Thomas Schelling)",
         "draw": 0,
         "fps": 10,
         "play": false
