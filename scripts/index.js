@@ -42,9 +42,7 @@ var onscroll = function(){
 
 window.addEventListener("scroll",onscroll,false);
 setTimeout(onscroll,500);
-setTimeout(onscroll,1000);
-setTimeout(onscroll,1500);
-setTimeout(onscroll,2000);
+setInterval(onscroll,1000); // just update every second, whatever.
 
 /***
 
@@ -137,6 +135,74 @@ for(var i=0;i<reader_choices.length;i++){
 
 /***
 
+HELPING WITH THE SIMS 
+open in a new tab,
+and embedding them
+
+***/
+
+// Update example (separate func so can call for zoo over and over)
+var updateExample = function(example){
+
+	// Get iframe src
+	var iframe = example.querySelector("iframe");
+	var src = iframe.src;
+
+	// Get the DOM
+	var container = example.querySelector("#example_link");
+	if(container.getAttribute("manual")) return; // NOPE
+	container.innerHTML = ""; // clear
+
+	// New DOM!
+	var dom = document.createElement("span");
+
+	// Link
+	var link = document.createElement("a");
+	link.innerHTML = "open in new tab";
+	link.href = src;
+	link.target = "_blank";
+	dom.appendChild(link);
+
+	// Divider
+	var divider = document.createElement("span");
+	divider.innerHTML = "&nbsp;||&nbsp;";
+	dom.appendChild(divider);
+
+	// Embed text
+	var embed = document.createElement("span");
+	embed.innerHTML = "embed";
+	embed.style.cursor = "pointer";
+	embed.onclick = function(){
+		embed.style.cursor = "";
+		embed.innerHTML = "paste this code in your site:&nbsp;";
+		readonly.style.display = "inline-block";
+	};
+	dom.appendChild(embed);
+
+	// Readonly input
+	var readonly = document.createElement("input");
+	var width = 800;
+	var height = Math.round(width/(iframe.clientWidth/iframe.clientHeight));
+	readonly.value = '<iframe width="'+width+'" height="'+height+'" src="'+src+'" frameborder="0"></iframe>';
+	readonly.setAttribute("readonly",true);
+	readonly.onclick = function(){
+		readonly.select();
+	};
+	dom.appendChild(readonly);
+
+	// Put it all in
+	container.appendChild(dom);
+
+};
+
+// For each example...
+var examples = document.querySelectorAll(".example");
+for(var i=0;i<examples.length;i++){
+	updateExample(examples[i]);
+}
+
+/***
+
 ZOO SELECT
 
 ***/
@@ -149,7 +215,7 @@ var zoo_options = document.querySelectorAll("#zoo_select > div");
 var onSelectZoo = function(event){
 
 	var simName = event.target.getAttribute("sim");
-	zoo_iframe.src = "model?local=zoo/"+simName+"&play=2&edit=1";
+	zoo_iframe.src = "model?local=zoo/"+simName+"&edit=1";
 
 	// All de-selected...
 	for(var i=0;i<zoo_options.length;i++){
@@ -159,6 +225,9 @@ var onSelectZoo = function(event){
 
 	// ...except the one just selected, obviously.
 	event.target.setAttribute("selected","true");
+
+	// And update the Example Link
+	updateExample(document.getElementById("zoo_example"));
 
 };
 for(var i=0;i<zoo_options.length;i++){
@@ -170,5 +239,6 @@ for(var i=0;i<zoo_options.length;i++){
 onSelectZoo({
 	target: document.querySelector("#zoo_select > div:nth-child(1)")
 });
+
 
 },false);

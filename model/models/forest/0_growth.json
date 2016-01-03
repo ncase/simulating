@@ -13,7 +13,7 @@
             "actions": [
                 {
                     "type": "if_random",
-                    "probability": 0.003,
+                    "probability": 0.001,
                     "actions": [
                         {
                             "type": "go_to_state",

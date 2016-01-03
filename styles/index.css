@@ -123,7 +123,7 @@ a:hover{
 	width: 800px;
 	*/
 	width: 880px;
-	margin: 50px auto;
+	margin: 50px auto 40px auto;
 }
 .example div#title{
 	font-size: 30px;
@@ -150,6 +150,24 @@ a:hover{
 	display: block;
 	margin: 0;
 	margin-top: 10px;
+}
+.example div#example_link{
+	font-size: 18px;
+	text-align: right;
+	margin-top: 5px;
+	color: #aaa;
+	height: 21px;
+}
+.example div#example_link a{
+	text-decoration: none;
+	color: inherit;
+	font-weight: inherit;
+}
+.example div#example_link input{
+	display: none;
+	width: 470px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
 }
 
 
