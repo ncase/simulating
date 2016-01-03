@@ -111,26 +111,57 @@ Editor.create = function(){
 		saveChanges.innerHTML = "<span style='font-size:30px; line-height:40px'>★</span>save your model";
 		saveChanges.onclick = function(){
 			saveLabel.innerHTML = "saving...";
+			embedLabel.innerHTML = "...";
 			Save.uploadModel();
 		};
 		Editor.dom.appendChild(saveChanges);
 
-		// Save your changes, label & link
+		// Save your changes, label & link, label & embed
+		
+		// save label
 		var saveLabel = Editor.createLabel("when you save your model, you'll get a link here:")
 		saveLabel.style.display = "block";
 		saveLabel.style.margin = "10px 0";
 		Editor.dom.appendChild(saveLabel);
+
+		// save link
 		var saveLink = document.createElement("input");
 		saveLink.type = "text";
 		saveLink.className = "editor_save_link";
+		saveLink.setAttribute("readonly",true);
 		saveLink.onclick = function(){
 			saveLink.select();
 		};
+		Editor.dom.appendChild(saveLink);
+
+		// embed label 
+		var embedLabel = Editor.createLabel("and an embed code here:")
+		embedLabel.style.display = "block";
+		embedLabel.style.margin = "10px 0";
+		Editor.dom.appendChild(embedLabel);
+
+		// save link
+		var embedLink = document.createElement("input");
+		embedLink.type = "text";
+		embedLink.className = "editor_save_link";
+		embedLink.setAttribute("readonly",true);
+		embedLink.onclick = function(){
+			embedLink.select();
+		};
+		Editor.dom.appendChild(embedLink);
+
+		// on save success
 		subscribe("/save/success",function(link){
+
 			saveLabel.innerHTML = "here you go! <a href='"+link+"' target='_blank'>(open in new tab)</a>";
 			saveLink.value = link;
+			embedLabel.innerHTML = "to embed it, paste this code in your site:";
+
+			var width = 800;
+			var height = Math.round(width/(document.body.clientWidth/document.body.clientHeight));
+			embedLink.value = '<iframe width="'+width+'" height="'+height+'" src="'+link+'" frameborder="0"></iframe>';
+			
 		});
-		Editor.dom.appendChild(saveLink);
 
 	}
 
