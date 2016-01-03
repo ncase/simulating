@@ -1,6 +1,6 @@
 (function(){
 
-if(!browserSupportsEmoji()){
+IfDoesNotSupportEmoji(function(){
 
 	// Add this new style
 	var style = document.createElement("style");
@@ -14,6 +14,6 @@ if(!browserSupportsEmoji()){
 	'}';
 	document.body.appendChild(style);
 
-}
+});
 
 })();
