@@ -10,7 +10,7 @@ body{
 	background: #fff;
 	margin:0;
 
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'OpenSansEmoji', Helvetica, Arial, sans-serif;
 	font-weight: 100;
 	font-size: 22px;
 
@@ -93,6 +93,9 @@ a:hover{
     
     position: relative;
     left: 420px;
+}
+#splash_kiss{
+	font-family: 'OpenSansEmoji', Helvetica, Arial, sans-serif;
 }
 
 /** THE ESSAY **/
@@ -192,7 +195,7 @@ a:hover{
 
 /** ZOO SELECT **/
 #zoo_select{
-	font-size: 25px;
+	font-size: 24px;
 	line-height: 30px;
 	overflow: hidden;
 	margin-top: 5px;
@@ -317,3 +320,7 @@ ul.share-buttons img{
 	width: 50px;
 }
 
+/** EMOJI FALLBACK **/
+#emoji_warning{
+	display:none;
+}

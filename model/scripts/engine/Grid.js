@@ -142,7 +142,8 @@ Grid.updateSize = function(){
 	css += "#grid>div{ width:"+(w*t)+"px; height:"+t+"px; }\n";
 	css += "#grid>div>div{ width:"+t+"px; height:"+t+"px; }\n";
 	css += "#grid_bg{ width:"+(w*t)+"px; height:"+(h*t)+"px; font-size:"+t+"px; }\n";
-	css += "#grid_bg>div{ width:"+(w*t)+"px; height:"+t+"px; }\n";
+	//css += "#grid_bg>div{ width:"+(w*t)+"px; height:"+t+"px; }\n";
+	css += "#grid_bg>div{ width:"+(w*(t+2))+"px; height:"+t+"px; }\n"; // +2 for the zoom bug.
 	css += "#grid_bg>div>div{ width:"+(t-2)+"px; height:"+(t-2)+"px; }\n";
 	Grid.css.innerHTML = css;
 
