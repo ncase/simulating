@@ -73,11 +73,11 @@
         "proportions": [
             {
                 "stateID": 0,
-                "parts": 70
+                "parts": 60
             },
             {
                 "stateID": 1,
-                "parts": 30
+                "parts": 40
             },
             {
                 "stateID": 2,

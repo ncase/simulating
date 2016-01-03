@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "===== EXPERIMENT =====\n\n✂︎ Tree Killers, as their name suggests, kill trees next to them.\n\nClick-and-drag on the grid to draw walls of ✂︎, (walls can be curvy) to divide the world up into a dozen or more sections. (sections can be unequal)\n\nWhen you're done, hit [PLAY]! What happens now? And why?",
+        "description": "===== EXPERIMENT =====\n\n✂︎ Tree Killers, as their name suggests, kill trees next to them.\n\nClick-and-drag on the grid to draw walls of ✂︎, (walls can be curvy) to divide the world up into a dozen or more sections. (sections can be unequal)\n\nWhen you're done, hit [PLAY]! What happens now? And why?\n\n(P.S: you can now control the sim's speed, or go step-by-step)",
         "draw": 3,
         "fps": 30
     },

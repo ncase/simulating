@@ -86,12 +86,13 @@ a:hover{
     height: 75px;
 }
 #splash_hand{
+	display: block;
 	margin: 0 auto;
-    width: 210px;
+    width: 75px;
     height: 75px;
-    background: url(images/its_interactive.png);
+    
     position: relative;
-    left: 360px;
+    left: 420px;
 }
 
 /** THE ESSAY **/
@@ -280,14 +281,25 @@ a:hover{
 }
 #supporter_drawings > div{
 	display: inline-block;
-	width:100px; height:120px;	
+	width:100px;
+	height:140px;	
 	margin-bottom: 15px;
 	text-align: center;
+	position: relative;
 }
 #supporter_drawings > div > img{
+	position: absolute;
 	width:100px;
 	height:100px;
-	margin-bottom: 3px;
+	left:0px;
+	top:0px;
+}
+#supporter_drawings > div > div{
+	position: absolute;
+	width: 80px;
+	height: 37px;
+	left:10px;
+	top:103px;
 }
 #social{
 	margin-top: 50px;

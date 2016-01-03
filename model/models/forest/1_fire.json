@@ -1,6 +1,6 @@
 {
     "meta": {
-        "description": "===== EXPERIMENT =====\n\nThe tree growth rate starts at 0.3%. What happens when you increase it to 1%? 2%? 5%?\n\n(Also, you can now pause the sim, and choose what you want to \"draw\" on the grid)",
+        "description": "===== EXPERIMENT =====\n\nThe tree growth rate starts at 0.3%. What happens when you increase it to 1%? 2%? 5%?\n\n(P.S: you can now pause the sim, and choose what you want to \"draw\" on the grid)",
         "draw": 2,
         "fps": 30
     },
