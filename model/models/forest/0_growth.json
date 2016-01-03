@@ -2,8 +2,7 @@
     "meta": {
         "description": "You can edit EVERYTHING in these sims. The rules, the art, even this text! In fact, all the sims in this post were made with *this exact same editor*.\n\nClick the grid to start fire, or scroll down to change the art & rules!",
         "draw": 2,
-        "fps": 15,
-        "play": true
+        "fps": 15
     },
     "states": [
         {

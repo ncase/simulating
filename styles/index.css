@@ -38,18 +38,33 @@ a:hover{
 	margin-bottom: 50px;
 
 }
-.splash > iframe{
-	position: absolute;
-	left:-65px;
-	width: 1500px;
-	height: 100%;
-	border: none;
-}
 .splash > div{
 	position: absolute;
+}
+#splash_iframe_container{
+	position: absolute;
+	margin: auto;
+	top:0; bottom:0; left:0; right:0;
+	width:0; height:0;
+}
+#splash_iframe{
+	position: absolute;
+	left: -750px;
+	top: -275px;
+	width: 1500px;
+	height: 550px;
+	border: none;
+}
+#splash_shadow{
 	pointer-events:none;
+	
+	width:100%; height:100%;
+	box-shadow: inset 0 0 200px rgba(0,0,0,1);
 }
 #splash_title{
+
+	pointer-events:none;
+
 	width: 960px;
 	height: 280px;
 
@@ -63,6 +78,9 @@ a:hover{
 	text-shadow: 0px 0px 20px #000, 0px 0px 20px #000;
 }
 #splash_hand_container{
+
+	pointer-events:none;
+
 	width: 100%;
 	bottom: 0;
     height: 75px;

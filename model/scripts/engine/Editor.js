@@ -112,6 +112,8 @@ Editor.create = function(){
 		saveChanges.onclick = function(){
 			saveLabel.innerHTML = "saving...";
 			embedLabel.innerHTML = "...";
+			saveLink.value = "...";
+			embedLink.value = "...";
 			Save.uploadModel();
 		};
 		Editor.dom.appendChild(saveChanges);

@@ -27,6 +27,7 @@ exports.UI = {
 UI.options.edit = getParameterByName("edit") || 2;
 UI.options.play = getParameterByName("play") || 2;
 UI.options.bg = getParameterByName("bg") || 1;
+UI.options.paused = getParameterByName("paused") || 0;
 
 
 ///////////////////////////////
@@ -67,11 +68,11 @@ play_reset.onclick = function(){
 // PLAY/PAUSE
 var play_pause = document.getElementById("play_pause");
 play_pause.onclick = function(){
-	Model.data.meta.play = !Model.data.meta.play;
+	Model.isPlaying = !Model.isPlaying;
 	updatePauseUI();
 };
 var updatePauseUI = function(){
-	if(Model.data.meta.play){
+	if(Model.isPlaying){
 		play_pause.innerHTML = "pause";
 		play_pause.setAttribute("paused",false);
 	}else{

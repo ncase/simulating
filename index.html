@@ -37,8 +37,12 @@
 
 <!-- SPLASH SCREEN -->
 <div class="splash" style="background: hsla(72, 87%, 11%, 1);">
-	<iframe src="model?local=splash/intro&bg=0&play=0&edit=0"></iframe>
-	<div style="width:100%; height:100%; box-shadow: inset 0 0 200px rgba(0,0,0,1);"></div>
+
+	<div id="splash_iframe_container">
+		<iframe id="splash_iframe" src="model?local=splash/intro&bg=0&play=0&edit=0"></iframe>
+	</div>
+
+	<div id="splash_shadow"></div>
 
 	<div id="splash_title">
 		<div style="font-size: 180px; line-height: 150px;">
@@ -457,7 +461,7 @@
 	<p>
 		🏠Heck, <i>I’m</i> also skeptical if we should set more fires.
 		There are legitimate concerns about smoke,
-		and accidentally burning people’s homes down.
+		and accidentally burning people’s houses down.
 		I don’t envy whoever has to make the decision to let someone lose their home,
 		so that in the future, others won’t.
 	</p>
@@ -486,13 +490,13 @@
 	<div id="title">
 		<b>A Simulation</b> With A Bunch Of...
 		<div id="zoo_select">
-			<div sim="sick">
+			<div src="model?local=zoo/sick&edit=1">
 				😰 Peeps Gettin' Sick
 			</div>
-			<div sim="schelling">
+			<div src="model?local=zoo/schelling&edit=1&paused=1">
 				🐹 Rodent Racism
 			</div>
-			<div sim="civil_war">
+			<div src="model?local=zoo/civil_war&edit=1">
 				😾 Cat/Dog Civil Conflict
 			</div>
 		</div>

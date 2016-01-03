@@ -2,8 +2,7 @@
     "meta": {
         "description": "===== EXPERIMENT #1 =====\n\n[PAUSE] then [RESET] sim.\n\nDraw walls to divide the grid into a dozen or more sections. Again, walls can be curvy & unequal. \n\nHit [PLAY]. What happens? Why?\n\n===== EXPERIMENT #2 =====\n\n[PAUSE] then [RESET] sim. \n\nGive the Empty Spot a new rule: “With a 1% chance, turn into fire.” \n\nHit [PLAY]. What happens? Why?",
         "draw": 6,
-        "fps": 60,
-        "play": true
+        "fps": 60
     },
     "states": [
         {

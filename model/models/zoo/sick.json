@@ -2,8 +2,7 @@
     "meta": {
         "description": "Click grid to start an epidemic.\n😌susceptibles can get infected\n😎immunized peeps are one-tenth as likely to get infected\n😰sick peeps can recover or die\n💀dead\n😓recovered, can't get sick again\n\nPublic health officials already use sims to fight epidemics, which means... 😎 SIMS SAVE LIVES.\n\nThis simulation explains:\n* herd immunity\n* herd immunity's tipping point\n* why a virus that's *too* deadly, paradoxically, kills fewer people.",
         "draw": 2,
-        "fps": 30,
-        "play": true
+        "fps": 30
     },
     "states": [
         {

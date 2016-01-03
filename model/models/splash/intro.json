@@ -2,8 +2,7 @@
     "meta": {
         "description": "none",
         "draw": 2,
-        "fps": 15,
-        "play": true
+        "fps": 15
     },
     "states": [
         {

@@ -29,6 +29,9 @@ as well as serialize & deserialize.
 		// Any controls at all?
 		if(UI.options.edit!=UI.NONE) Editor.create(Model.data);
 
+		// Paused?
+		Model.isPlaying = (UI.options.paused==UI.NONE);
+
 		// Update the emoji
 		publish("/grid/updateSize");
 
@@ -69,11 +72,12 @@ as well as serialize & deserialize.
 	};
 
 	// Playing...
+	Model.isPlaying = true;
 	Model.play = function(){
-		Model.data.meta.play = true;
+		Model.isPlaying = true;
 	};
 	Model.pause = function(){
-		Model.data.meta.play = false;
+		Model.isPlaying = false;
 	};
 	var _lastTimestamp = null;
 	var _ticker = 0;
@@ -101,7 +105,7 @@ as well as serialize & deserialize.
 		if(steps>3) steps=3; // yeah don't go overboard here.
 
 		// Paused, or not seen - also don't update
-		if(!Model.data.meta.play) return;
+		if(!Model.isPlaying) return;
 		if(!window.isOnScreen) return;
 
 		// If after all that, it should STEP...

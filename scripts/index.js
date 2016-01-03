@@ -214,8 +214,8 @@ var zoo_options = document.querySelectorAll("#zoo_select > div");
 // Zoo click handler for all of them
 var onSelectZoo = function(event){
 
-	var simName = event.target.getAttribute("sim");
-	zoo_iframe.src = "model?local=zoo/"+simName+"&edit=1";
+	var simSource = event.target.getAttribute("src");
+	zoo_iframe.src = simSource;
 
 	// All de-selected...
 	for(var i=0;i<zoo_options.length;i++){
