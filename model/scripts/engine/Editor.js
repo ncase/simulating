@@ -101,8 +101,11 @@ Editor.create = function(){
 	};
 	Editor.dom.appendChild(undoChanges);
 
-	// If options allow saving changes
+	// If options allow saving changes, and export data
 	if(UI.options.edit==UI.ADVANCED){
+
+		// Divider
+		Editor.dom.appendChild(document.createElement("br"));
 
 		// Save your changes
 		var saveChanges = document.createElement("div");
@@ -142,7 +145,7 @@ Editor.create = function(){
 		embedLabel.style.margin = "10px 0";
 		Editor.dom.appendChild(embedLabel);
 
-		// save link
+		// embed link
 		var embedLink = document.createElement("input");
 		embedLink.type = "text";
 		embedLink.className = "editor_save_link";
@@ -151,6 +154,11 @@ Editor.create = function(){
 			embedLink.select();
 		};
 		Editor.dom.appendChild(embedLink);
+
+		// divider
+		Editor.dom.appendChild(document.createElement("br"));
+		Editor.dom.appendChild(document.createElement("br"));
+		Editor.dom.appendChild(document.createElement("br"));
 
 		// on save success
 		subscribe("/save/success",function(link){
@@ -164,6 +172,28 @@ Editor.create = function(){
 			embedLink.value = '<iframe width="'+width+'" height="'+height+'" src="'+link+'" frameborder="0"></iframe>';
 			
 		});
+
+		// Export your data
+		var exportModel = document.createElement("div");
+		exportModel.className = "editor_fancy_button";
+		exportModel.id = "save_changes";
+		exportModel.innerHTML = "<span style='font-size:25px; line-height:35px; font-family:monospace'>{}</span>export model";
+		exportModel.onclick = function(){
+			window.open("data:text/json;charset=utf-8, "+JSON.stringify(Model.data));
+		};
+		Editor.dom.appendChild(exportModel);
+
+		// export label 
+		var exportLabel = Editor.createLabel(
+			"This is for those of you who want to save your sim to your own computertron! "+
+			"<a href='https://github.com/ncase/simulating#how-to-run-this-on-your-own-computertron' target='_blank'>[How To Do That]</a> "+
+			"Click the above button to open your sim's data in a new tab. "+
+			"Save it as <span style='font-family:monospace'>[your sim name].json</span>. "+
+			"(Remember the \".json\"! It's important!)"
+		);
+		exportLabel.style.display = "block";
+		exportLabel.style.margin = "10px 0";
+		Editor.dom.appendChild(exportLabel);
 
 	}
 

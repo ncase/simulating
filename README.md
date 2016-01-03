@@ -1,48 +1,49 @@
-Simulating The World (In Emoji)
----
 
-[WORK IN PROGRESS. IF YOU'RE SEEING THIS GITHUB REPO, SHHHHHHH.]
+![](http://i.imgur.com/O89JmOd.gif)
+
+An interactive guide to thinking in systems.
+**[READ/PLAY HERE](http://ncase.me/simulating)**
 
 Made by Nicky Case: [@ncasenmare](https://twitter.com/ncasenmare) | [ncase.me](http://ncase.me)
 
-All My Shiz Is Public Domain
+Dedicated to the public domain with [Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0/)! I'm giving away all my art/code/words, so that you teachers, scientists, hobbyists, activists, and emoji-lovers can use them however you like! This is for you. 💜
+
+How To Run This On Your Own Computertron
 ---
 
-With the exception of the code/assets listed below,
-I made all the words and code in this explorable explanation,
-and guess what? I'm giving it all away!
+Yeah basically just download this github repository, and host it on some local server. I use the minimalist [http-server](https://www.npmjs.com/package/http-server), but you can also use [MAMP](https://www.mamp.info/en/). (*Simulating The World* is just a bunch of static files, but it needs to be on a server because of some weird browser security issues with XMLHttpRequests)
 
-That's right, I'm dedicating it all to the public domain.
-(via [Creative Commons Zero](http://creativecommons.org/publicdomain/zero/1.0/))
+###Saving your own sims locally:
 
-That means if you want to use it in your classroom, your newsroom, your boardroom,
-your bedroom, your blogroom, your chatroom, your maxheadroom, or whatever other rooms
-you have, *you already have my permission!*
+1. Get it running on your own computertron (see above). For the sake of this example, let's assume it's running on `http://localhost:8080/`. (which it will by default, if you use http-server)
+2. Go to `http://localhost:8080/model`, and make your own sim!
+3. Click "export model". Your simulation's data should pop up in a new tab.
+4. Save it locally to `[your local folder]/model/models`, as `[your sim name].json`. (NOTE: the ".json" extension is important!)
+5. Finally, to see your own sim in action, go to `http://localhost:8080/model?local=[your sim name]`! Voilà! And you can keep editing and exporting from there, just copy-paste the new data to `[your sim name].json`.
 
-Attribution is always appreciated, but I'm not going to send legal goons after you for it.
-
-Other Peeps' Code I Used
+Other Peeps' Stuff I Used
 ---
 
-**For the interactive blog post:** (all MIT licensed)
+They're all open source! Except for Firebase. Oh well.
 
-* [Bigfoot](http://www.bigfootjs.com/) - For the fancy footnotes.
-* [jQuery](https://jquery.com/) - Makes JavaScript less crappy. Also, required for Bigfoot.
-
-**For the model-maker tool:** (all MIT licensed)
+**Code Stuff:**
 
 * [MinPubSub](https://github.com/daniellmb/MinPubSub) - A tiny publish/subscribe library.
 * [Perfect Scrollbar](http://noraesae.github.io/perfect-scrollbar/) - Custom scrollbars. Mostly because Mac OS X Lion is silly and hides all the scrollbars because 'minimalism'.
 * [requestAnimationFrame shim](https://gist.github.com/paulirish/1579671) - A requestAnimationFrame polyfill.
 * [reqwest](https://github.com/ded/reqwest) - A tiny XMLHttpRequest library.
+* [Firebase](https://www.firebase.com/) - To save & load models from ☁️The Cloud☁️
 
-**To save & load models:**
-[Firebase](https://www.firebase.com/) ([Firebase ToS](https://www.firebase.com/terms/terms-of-service.html))
+**Font Stuff:**
+
+* [Sniglet](https://www.theleagueofmoveabletype.com/sniglet) - For the title splash.
+* [OpenSansEmoji](https://github.com/MorbZ/OpenSansEmoji) - Fallback font if your browser doesn't support emoji.
+
 
 A Narcisstic List of Press This Thing Got
 ---
 
-* [KillScreen](https://killscreen.com/articles/replicate-the-worlds-most-complex-systems-via-emoji) (written up for the prototype, before the final thing was even done)
+* **Dec 2nd, 2015:** [KillScreen](https://killscreen.com/articles/replicate-the-worlds-most-complex-systems-via-emoji) (written up for my prototype, before the final thing was even done)
 
 
 
