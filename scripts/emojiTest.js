@@ -17,7 +17,7 @@ var _test1 = function(callback){
 };
 
 // For Firefox, gawd
-var _test2 = function(){
+var _test2 = function(callback){
 
 	// Does some bullshenanigans with doing an SVG first.
 	var canvas = document.createElement('canvas'),
@@ -53,11 +53,11 @@ exports.IfDoesNotSupportEmoji = function(callback){
 	// for testing...
 	//callback(); return;
 
-	_test1(function(supportsEmoji){
-		if(supportsEmoji) return;
+	_test1(function(pass1){
+		if(pass1) return;
 
-		_test2(function(supportsEmoji){
-			if(supportsEmoji) return;
+		_test2(function(pass2){
+			if(pass2) return;
 			callback();
 		});
 
