@@ -138,25 +138,39 @@ Grid.updateSize = function(){
 
 	// STYLE
 	var css = "";
+
+	// Grid tiles
 	css += "#grid{ width:"+(w*t)+"px; height:"+(h*t)+"px; font-size:"+t+"px; }\n";
 	css += "#grid>div{ width:"+(w*t)+"px; height:"+t+"px; }\n";
 	css += "#grid>div>div{ width:"+t+"px; height:"+t+"px; }\n";
+
+	// Grid BG - absolute
 	css += "#grid_bg{ width:"+(w*t)+"px; height:"+(h*t)+"px; font-size:"+t+"px; }\n";
-	//css += "#grid_bg>div{ width:"+(w*t)+"px; height:"+t+"px; }\n";
-	css += "#grid_bg>div{ width:"+(w*(t+2))+"px; height:"+t+"px; }\n"; // +2 for the zoom bug.
-	css += "#grid_bg>div>div{ width:"+(t-2)+"px; height:"+(t-2)+"px; }\n";
+	/*css += "#grid_bg>div{ width:"+(w*t)+"px; height:"+t+"px; }\n";
+	css += "#grid_bg>div>div{ width:"+(t-2)+"px; height:"+(t-2)+"px; }\n";*/
+	css += "#grid_bg>div{ width:"+(t-2)+"px; height:"+(t-2)+"px; }\n"
+
+	// Apply CSS
 	Grid.css.innerHTML = css;
 
 	// HTML JUST FOR THE GRID BACKGROUND
+	var html = "";
+	for(var y=0;y<Grid.array.length;y++){
+		for(var x=0;x<Grid.array[0].length;x++){
+			var top = Math.floor(t*y);
+			var left = Math.floor(t*x);
+			html += "<div style='top:"+top+"px; left:"+left+"px'></div>";
+		}
+	}
+	Grid.bg.innerHTML = html;
+
+	// HTML FOR THE REAL GRID
 	var html = "";
 	for(var y=0;y<Grid.array.length;y++){
 		html += "<div>";
 		for(var x=0;x<Grid.array[0].length;x++) html += "<div></div>";
 		html += "</div>";
 	}
-	Grid.bg.innerHTML = html;
-
-	// HTML FOR THE REAL GRID
 	Grid.dom.innerHTML = html;
 
 };

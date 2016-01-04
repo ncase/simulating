@@ -32,16 +32,17 @@ THE GRID
 	top:0; left:0; right:0; bottom:0;
 	cursor: default;
 }
-#grid>div, #grid_bg>div{
-}
-#grid>div>div, #grid_bg>div>div{
+#grid>div>div{
 	float:left;
 }
 #grid>div>div{
 	line-height: 1em;
 	text-align: center;
 }
-#grid_bg, #grid_bg>div>div{
+#grid_bg>div{
+	position: absolute;
+}
+#grid_bg, #grid_bg>div{
 	border: 1px solid #eee;
 }
 

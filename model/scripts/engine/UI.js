@@ -51,7 +51,7 @@ if(UI.options.play==UI.BASIC){
 if(UI.options.bg==UI.NONE){
 	// CSS: transparent BG, no grid. // HACK - also, green trees, whatever
 	var css = document.getElementById("ui_style");
-	css.innerHTML = "#grid_bg, #grid_bg>div>div{ border:none; } #grid{color:#758C0F}";
+	css.innerHTML = "#grid_bg{ display:none; } #grid{color:#758C0F}";
 }
 
 
