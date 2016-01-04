@@ -33,6 +33,7 @@ They're all open source! Except for Firebase. Oh well.
 * [requestAnimationFrame shim](https://gist.github.com/paulirish/1579671) - A requestAnimationFrame polyfill.
 * [reqwest](https://github.com/ded/reqwest) - A tiny XMLHttpRequest library.
 * [Firebase](https://www.firebase.com/) - To save & load models from ☁️The Cloud☁️
+* [Platform.js](https://github.com/bestiejs/platform.js) - To test browser/OS, because there is no good emoji feature detection arrrgghhhhhhhh
 
 **Font Stuff:**
 
