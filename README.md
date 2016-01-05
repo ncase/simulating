@@ -44,6 +44,7 @@ They're all open source! Except for Firebase. Oh well.
 A Narcisstic List of Press This Thing Got
 ---
 
+* **Jan 5th, 2016:** [FastCoDesign](https://www.fastcodesign.com/3055079/infographic-of-the-day/how-complex-systems-and-chaos-theory-work-according-to-emoji)
 * **Dec 2nd, 2015:** [KillScreen](https://killscreen.com/articles/replicate-the-worlds-most-complex-systems-via-emoji) (written up for my prototype, before the final thing was even done)
 
 
