@@ -65,25 +65,7 @@ Actions.if_neighbor = {
 		// First, get num of actual neighbors that are STATE
 		var count = Grid.countNeighbors(agent, config.stateID);
 
-		// Did condition pass?
-		var pass;
-		switch(config.sign){
-			case "<":
-				pass = (count<config.num);
-				break;
-			case "<=":
-				pass = (count<=config.num);
-				break;
-			case ">":
-				pass = (count>config.num);
-				break
-			case ">=":
-				pass = (count>=config.num);
-				break;
-			case "=":
-				pass = (count==config.num);
-				break;
-		}
+		var pass = compare(config.sign, config.num, count);
 
 		// If so, perform the following actions.
 		if(pass){
@@ -117,6 +99,73 @@ Actions.if_neighbor = {
 	}
 
 };
+
+// IF_NEAR: If we're near a thing, do a thing!
+Actions.if_near = {
+
+	name: "If near to a certain number of...",
+
+	props: {
+		countSign: ">=",
+		num: 3,
+		distance: 3,
+		stateID: 0,
+		actions: []
+	},
+
+	step: function(agent,config){
+
+		var pass = Grid.nearby(agent, config.stateID, config.num, config.countSign, config.distance);
+
+		if(pass) {
+			PerformActions(agent, config.actions);
+		}
+
+	},
+
+	ui: function(config){
+
+		return EditorHelper()
+				.label("If ")
+				.selector([
+					{ name:"fewer than (<)", value:"<" },
+					{ name:"at least (>=)", value:">=" },
+				],config,"countSign")
+				.label(" ")
+				.number(config, "num", {
+					integer:true,
+					min:0, max:8,
+					step:1
+				})
+				.stateSelector(config, "stateID")
+				.label(" are within")
+				.number(config, "distance", {
+					integer: true,
+					min:1, max:8,
+					step: 1
+				})
+				.actionsUI(config.actions)
+				.dom;
+	}
+
+};
+
+function compare(sign, constraint, value) {
+		switch(sign){
+			case "<":
+				return value<constraint;
+			case "<=":
+				return value<=constraint;
+			case ">":
+				return value>constraint;
+			case ">=":
+				return value>=constraint;
+			case "=":
+				return value==constraint;
+		}
+}
+
+
 
 // IF_RANDOM: With a X% chance, do a thing
 Actions.if_random = {

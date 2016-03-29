@@ -227,15 +227,7 @@ Grid.getNeighbors = function(agent){
 	}
 
 	// Then, filter out ones that can't work
-	coords = coords.filter(function(coord){
-		var x = coord[0];
-		var y = coord[1];
-		if(x<0) return false;
-		if(x>=Grid.array[0].length) return false;
-		if(y<0) return false;
-		if(y>=Grid.array.length) return false;
-		return true;
-	});
+	coords = coords.filter(validCoordinate);
 
 	// Then, get all neighbors at those coords
 	var neighbors = [];
@@ -249,6 +241,27 @@ Grid.getNeighbors = function(agent){
 	return neighbors;
 
 };
+
+function validCoordinate(coord) {
+  var x = coord[0];
+  var y = coord[1];
+  return legalX(x) && legalY(y);
+}
+
+function legalX(x) {
+  return x>=0 && x < gridWidth();
+}
+function legalY(y) {
+  return y>=0 && y < gridHeight();
+}
+
+function gridWidth() {
+  return  Grid.array[0].length;
+}
+
+function gridHeight() {
+  return  Grid.array.length;
+}
 
 // Get ALL agents (just collapses to a single array)
 Grid.getAllAgents = function(){
@@ -274,6 +287,45 @@ Grid.countNeighbors = function(agent,stateID){
 		if(neighbors[i].stateID==stateID) count++;
 	}
 	return count;
+};
+
+// Count items nearby of a certain state
+Grid.nearby = function(agent,stateID, target, moreOrLess, within){
+
+  var isAtLeast = moreOrLess === ">=";
+
+  // no neighbours, so can't be at least, and definitely less than
+  if(within < 1) {
+    return !isAtLeast;
+  }
+
+  // calculate the maximum valid neighbourhood considering
+  // grid constraints
+  var coords = {
+    x: Math.max(0, agent.x - within),
+    mx: Math.min(agent.x + within, gridWidth()),
+    y: Math.max(0, agent.y - within),
+    my: Math.min(agent.y + within, gridHeight()),
+  };
+
+  var count = 0;
+
+  for(var y = coords.y, maxY = coords.my; y < maxY; y++) {
+    for(var x = coords.x, maxX = coords.mx; x < maxX; x++) {
+      if(Grid.array[y][x].stateID==stateID) {
+        count += 1;
+        // if we're at target for at least, we've done enough to know we've passed
+        // if at target for less than, we know we've failed
+        if(count >= target) {
+          return isAtLeast;
+        }
+      }
+    }
+  }
+
+  // if we're here we haven't found the target count. that is
+  // a fail for more than, a pass for less than
+  return !isAtLeast;
 };
 
 // Reset world, update the view, and resize to fit
