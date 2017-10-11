@@ -19,7 +19,7 @@ exports.IfDoesNotSupportEmoji = function(fail){
 		}
 	}
 
-	// Windows: FAIL ON VISTA/XP, otherwise EVERYTHING EXCEPT CHROME
+	// Windows: FAIL ON VISTA/XP, otherwise EVERYTHING EXCEPT CHROME(lower than v53)
 	var isWindows = (platform.os.family.search("Windows")>=0); // it contains "Windows" somewhere
 	if(isWindows){
 		if(platform.os.family=="Windows Vista / Server 2008"){
@@ -32,7 +32,13 @@ exports.IfDoesNotSupportEmoji = function(fail){
 			fail(); return;
 		}
 		if(platform.name=="Chrome"){
-			fail(); return;	
+			// Chrome added support for color emoji in version 53 released September 2016
+			var chromeVersion = parseInt(platform.version.split(".")[0]);
+			if(chromeVersion>=53){
+				return;
+			}else{
+				fail(); return;	
+			}
 		}
 		return;
 	}
